@@ -97,8 +97,8 @@ export default function Home() {
             เห็นทะเลจากตัวบ้าน
           </h1>
           <p className="mt-4 max-w-xl text-slate-200 md:text-lg">
-            พูลวิลล่าสไตล์มินิมอลสีขาว พร้อมสระว่ายน้ำและสไลเดอร์น้ำ
-            เหมาะกับครอบครัวและกลุ่มเพื่อน ใกล้ชายหาดทะเลใต้ที่ยังสงบ
+            พูลวิลล่าสไตล์มินิมอลสีขาว 3 ห้องนอน รับได้ถึง 12 คนต่อหลัง
+            พร้อมสระว่ายน้ำและสไลเดอร์น้ำ ใกล้ชายหาดทะเลใต้ที่ยังสงบ
           </p>
           <div className="mt-6">
             <SocialButtons size="lg" />
@@ -115,8 +115,8 @@ export default function Home() {
           พูลวิลล่า 1 และ พูลวิลล่า 2
         </h2>
         <p className="mt-3 max-w-2xl text-slate-600">
-          ห้องพักทั้ง 2 หลังตกแต่งและขนาดเหมือนกัน
-          ห้องนั่งเล่นโล่งกว้างเชื่อมสระว่ายน้ำ
+          ห้องพักทั้ง 2 หลังขนาดและการตกแต่งเหมือนกัน — แต่ละหลังมี{" "}
+          <b>3 ห้องนอน 3 ห้องน้ำ</b> รับได้ถึง <b>12 คน</b> ห้องนั่งเล่นโล่งกว้างเชื่อมสระว่ายน้ำ
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -157,20 +157,72 @@ export default function Home() {
           ))}
         </div>
 
-        <ul className="mt-8 grid gap-3 text-slate-600 sm:grid-cols-2">
-          <li className="rounded-xl bg-teal-50 px-4 py-3">
-            🛏️ เตียงคู่และเตียงแฝด หลายเตียง พร้อมผ้าขนหนูและของตั้งวางพร้อมใช้
-          </li>
-          <li className="rounded-xl bg-teal-50 px-4 py-3">
-            🛋️ ห้องนั่งเล่นโซฟาขนาดใหญ่ มีโทรทัศน์ พักผ่อนได้เต็มที่
-          </li>
-          <li className="rounded-xl bg-teal-50 px-4 py-3">
-            🍳 มุมครัวพร้อมชุดหม้อ กาต้ม ถาดกาแฟ–ชา พร้อมบริการ
-          </li>
-          <li className="rounded-xl bg-teal-50 px-4 py-3">
-            🎯 โต๊ะพูล (บิลเลียด) และมุมเล่นเกมภายในบ้าน
-          </li>
-        </ul>
+        {/* รายละเอียดห้องนอน */}
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              icon: "🛏️",
+              label: "ห้องนอน 1",
+              detail: "เตียง 5 ฟุต 2 เตียง (4 คน) ติดสระว่ายน้ำ",
+            },
+            {
+              icon: "🛏️",
+              label: "ห้องนอน 2",
+              detail: "เตียง 5 ฟุต 2 เตียง (4 คน)",
+            },
+            {
+              icon: "🛏️",
+              label: "ห้องนอน 3",
+              detail:
+                "เตียง 5 ฟุต 2 เตียง (4 คน) ห้องน้ำในตัว ชั้น 2 เห็นวิวทะเล",
+            },
+          ].map((room) => (
+            <div
+              key={room.label}
+              className="rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-slate-100"
+            >
+              <p className="font-semibold text-slate-800">
+                <span aria-hidden>{room.icon}</span> {room.label}
+              </p>
+              <p className="mt-1 text-sm text-slate-600">{room.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* ฟรีทุกการเข้าพัก */}
+        <div className="mt-8 rounded-2xl bg-teal-50 p-6">
+          <h3 className="font-bold text-slate-800">
+            🎁 ฟรีทุกการเข้าพัก
+          </h3>
+          <ul className="mt-3 grid gap-2 text-slate-700 sm:grid-cols-2">
+            <li>✅ ฟรี Wi-Fi</li>
+            <li>✅ ฟรี น้ำแข็งในลัง 40 ลิตร</li>
+            <li>✅ ฟรี น้ำดื่ม 1 โหล</li>
+            <li>✅ ฟรี กาแฟ 12 ซอง</li>
+            <li>✅ ฟรี ถ่าน 2 กิโลกรัม</li>
+          </ul>
+        </div>
+
+        {/* ภายในโครง */}
+        <div className="mt-8 rounded-2xl bg-slate-50 p-6">
+          <h3 className="font-bold text-slate-800">
+            🏠 ภายในและอุปกรณ์ครบพร้อมใช้
+          </h3>
+          <ul className="mt-3 grid gap-2 text-slate-700 sm:grid-cols-2">
+            <li>✅ สระว่ายน้ำส่วนตัว ขนาด 3×6 เมตร + ห่วงยางแฟนซี 🏊🏻‍♂️</li>
+            <li>✅ 1 ห้องครัว — อุปกรณ์แยกชุดพุทธและมุสลิม</li>
+            <li>✅ 1 ห้องปาร์ตี้ พร้อมสมาร์ท TV 55 นิ้ว 🎺🥁🎤</li>
+            <li>✅ ชุดโต๊ะปิ้งย่างเตา BBQ</li>
+            <li>✅ โต๊ะพูล 7 ฟุต</li>
+            <li>✅ แอร์ทั้งหลัง (ยกเว้นห้องครัว)</li>
+            <li>✅ ตู้เย็น หม้อหุงข้าว กาน้ำร้อน</li>
+            <li>✅ เตาแก๊ส เตาไมโครเวฟ กะทะ หม้อ ถังน้ำแข็ง</li>
+            <li>✅ ชุดช้อนส้อม ถ้วยจานชาม 🍴🍽</li>
+            <li>✅ ชุดแก้ว แก้วกาแฟ ☕️</li>
+            <li>✅ ชุดมีดทำครัว ที่ปอกผลไม้ 🔪</li>
+            <li>✅ ครกตำส้มตำ</li>
+          </ul>
+        </div>
       </section>
 
       {/* สระว่ายน้ำ */}
@@ -196,8 +248,9 @@ export default function Home() {
             </figure>
             <div className="space-y-4 text-slate-200">
               <p className="text-lg">
-                เด็ก ๆ สนุกกับสไลเดอร์น้ำสีเขียวหยก ส่วนผู้ใหญ่ผ่อนคลาย
-                กับน้ำสระสีฟ้าใส โดยมีวิวริมทะเลข้างหลัง
+                สระส่วนตัวขนาด 3×6 เมตร พร้อมสไลเดอร์น้ำสีเขียวหยก — เด็ก ๆ สนุก
+                เป็นที่สุด ส่วนผู้ใหญ่ผ่อนคลายกับน้ำสระสีฟ้าใส
+                โดยมีวิวริมทะเลข้างหลัง
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl bg-white/5 p-4">
@@ -286,6 +339,12 @@ export default function Home() {
                 หรือทางโซเชียลตามปุ่มด้านล่าง — สอบถามและจองได้เร็วที่สุด
               </p>
               <SocialButtons size="lg" />
+              <a
+                href="tel:+66928613745"
+                className="inline-flex items-center gap-2 rounded-full bg-teal-600 px-7 py-3.5 text-base font-semibold text-white shadow-lg transition hover:bg-teal-700"
+              >
+                <span aria-hidden>📞</span> โทร 092-861-3745
+              </a>
               <div className="overflow-hidden rounded-2xl border border-slate-200">
                 <iframe
                   title="แผนที่ PUYA Beach Villa"
@@ -297,6 +356,17 @@ export default function Home() {
               </div>
               <p className="text-sm text-slate-500">
                 📍 อำเภอเทพา จังหวัดสงขลา — แผนที่ชี้ตำแหน่งจริงของที่พัก (กดป้ายในแผนที่เพื่อเปิดนำทางใน Google Maps ได้เลย)
+              </p>
+              <p className="text-sm text-slate-500">
+                📞 โทร 092-861-3745 · แผนที่:{" "}
+                <a
+                  href="https://maps.app.goo.gl/QHRFVZVc4vvrps6d7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-600 underline"
+                >
+                  เปิด Google Maps
+                </a>
               </p>
             </div>
             <div className="overflow-hidden rounded-2xl">
