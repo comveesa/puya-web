@@ -9,9 +9,18 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://puya-web.vercel.app"),
   title: "PUYA Beach Villa | พูลวิลล่าริมทะเล อ.เทพา จ.สงขลา",
   description:
     "พูลวิลล่าสัญชาติไทยแบบมินิมอลติดชายหาด อ.เทพา จ.สงขลา มีสระว่ายน้ำและสไลเดอร์น้ำ เหมาะกับครอบครัวและกลุ่มเพื่อน จอง/สอบถามผ่าน Facebook, TikTok และ Line",
+  openGraph: {
+    title: "PUYA Beach Villa | พูลวิลล่าริมทะเล อ.เทพา จ.สงขลา",
+    description:
+      "พูลวิลล่าสไตล์มินิมอลสีขาว พร้อมสระว่ายน้ำและสไลเดอร์น้ำ ใกล้ชายหาดทะเลใต้ อ.เทพา จ.สงขลา",
+    images: ["/images/img1928.webp"],
+    type: "website",
+    locale: "th_TH",
+  },
 };
 
 export default function RootLayout({
