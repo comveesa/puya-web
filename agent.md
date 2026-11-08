@@ -20,7 +20,7 @@
 ### ช่องทางติดต่อ (ใช้ในเว็บ)
 - Facebook: https://www.facebook.com/PUYA.Beach.Villa
 - TikTok: https://www.tiktok.com/@puya.beach.villa
-- Line Official: https://line.me/R/ti/p/@puyabeach (Line ID: puyabeach)
+- Line: https://line.me/R/ti/p/~puyabeach (Line ID: puyabeach — เป็นบัญชีบุคคล จึงใช้รูปแบบ ~; หากวันหนึ่งสมัคร Line Official Account เปลี่ยนเป็น https://line.me/R/ti/p/@puyabeach)
 
 ### ข้อมูลที่ยังขาด (ขอจากเจ้าของเมื่อได้)
 - เบอร์โทรศัพท์ติดต่อ

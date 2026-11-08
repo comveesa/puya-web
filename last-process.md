@@ -12,6 +12,13 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-08] แก้ลิงก์ Line ให้ทำงานจริง
+- ปัญหา: กดปุ่ม Line ในเว็บแล้วแอป Line ขึ้น "ข้อผิดพลาด — ไม่สามารถเปิดเพื่อนได้"
+- สาเหตุ: `puyabeach` เป็น **Line ID แบบบัญชีบุคคล** ต้องใช้รูปแบบ `line.me/R/ti/p/~puyabeach` (รูปแบบ `@puyabeach` ใช้กับ Official Account เท่านั้น)
+- ผมทดลอง fetch ลิงก์ `~puyabeach` แล้วจริงสำเร็จ (แสดง QR เพิ่มเพื่อน)
+- แก้: `app/page.tsx` (ปุ่ม Line + ข้อความหน้าติดต่อ) และ `agent.md` (บันทึกรูปแบบลิงก์ถูกต้อง)
+- ⚠️ ให้เจ้าของทดสอบกดปุ่ม Line อีกครั้งบนมือถือยืนยันว่าเปิดแอป Line ได้จริง
+
 ### [2026-11-08] สร้างหน้าเว็บเสร็จ (one-page) + แปลงรูปครบ
 - ติดตั้ง Next.js 15.5 + Tailwind v4 (ไม่ใช้ create-next-app เพราะโฟลเดอร์มี `images/` อยู่), ผล build: First Load JS 108 kB (เบามาก)
 - สคริปต์ `scripts/convert-images.mjs` (sharp + heic-convert) แปลงรูป **38/38 รูป** HEIC/JPG → `public/images/*.webp` (กว้าง ≤1600px, quality 78)

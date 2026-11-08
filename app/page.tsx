@@ -13,7 +13,7 @@ const SOCIALS = [
   },
   {
     name: "Line",
-    href: "https://line.me/R/ti/p/@puyabeach",
+    href: "https://line.me/R/ti/p/~puyabeach",
     emoji: "💬",
   },
 ];
@@ -282,7 +282,7 @@ export default function Home() {
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             <div className="space-y-4">
               <p className="text-slate-600">
-                ช่องทางติดต่อผ่าน Line โดยตรงที่ <b>@puyabeach</b>
+                ช่องทางติดต่อผ่าน Line โดยตรงที่ <b>puyabeach</b>
                 หรือทางโซเชียลตามปุ่มด้านล่าง — ทีมต้องการข้อมูลด้วยเยี่ยม เร็วที่สุด
               </p>
               <SocialButtons size="lg" />
