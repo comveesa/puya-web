@@ -115,7 +115,7 @@ export default function Home() {
           พูลวิลล่า 1 และ พูลวิลล่า 2
         </h2>
         <p className="mt-3 max-w-2xl text-slate-600">
-          ของห้องพักทั้ง 2 หลังตกแต่งและขนาดเหมือนกัน
+          ห้องพักทั้ง 2 หลังตกแต่งและขนาดเหมือนกัน
           ห้องนั่งเล่นโล่งกว้างเชื่อมสระว่ายน้ำ
         </p>
 
@@ -162,7 +162,7 @@ export default function Home() {
             🛏️ เตียงคู่และเตียงแฝด หลายเตียง พร้อมผ้าขนหนูและของตั้งวางพร้อมใช้
           </li>
           <li className="rounded-xl bg-teal-50 px-4 py-3">
-            🛋️ ห้องนั่งเล่นโซฟาขนาดใหญ่ ขอโทรทัศน์ ที่พักถันสะดวก
+            🛋️ ห้องนั่งเล่นโซฟาขนาดใหญ่ มีโทรทัศน์ พักผ่อนได้เต็มที่
           </li>
           <li className="rounded-xl bg-teal-50 px-4 py-3">
             🍳 มุมครัวพร้อมชุดหม้อ กาต้ม ถาดกาแฟ–ชา พร้อมบริการ
@@ -196,14 +196,14 @@ export default function Home() {
             </figure>
             <div className="space-y-4 text-slate-200">
               <p className="text-lg">
-                เด็ก ๆ คุ้นเคุ้นกับสไลเดอร์น้ำสีเขียวหยก ส่วนผู้ใหญ่ผ่อนคลาย
+                เด็ก ๆ สนุกกับสไลเดอร์น้ำสีเขียวหยก ส่วนผู้ใหญ่ผ่อนคลาย
                 กับน้ำสระสีฟ้าใส โดยมีวิวริมทะเลข้างหลัง
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl bg-white/5 p-4">
-                  <p className="font-semibold">🌊 สวนเงียบ</p>
+                  <p className="font-semibold">🌊 สงบส่วนตัว</p>
                   <p className="text-sm text-slate-400">
-                    ชายหาดซิชชันกรรมาร คนน้อย วิวสวย
+                    ชายหาดเงียบสงบ คนน้อย วิวสวย
                   </p>
                 </div>
                 <div className="rounded-xl bg-white/5 p-4">
@@ -215,11 +215,11 @@ export default function Home() {
                 <div className="rounded-xl bg-white/5 p-4">
                   <p className="font-semibold">🪟 วิวทะเล</p>
                   <p className="text-sm text-slate-400">
-                    ห้องพักและลานช่วงบ่าย มองขึ้นน้ำทะเลสวยๆ
+                    ห้องพักและลานโล่ง มองเห็นน้ำทะเลสวย ๆ
                   </p>
                 </div>
                 <div className="rounded-xl bg-white/5 p-4">
-                  <p className="font-semibold">👨‍👩‍👧 ที่กินร่วม</p>
+                  <p className="font-semibold">👨‍👩‍👧 รองรับทุกกลุ่ม</p>
                   <p className="text-sm text-slate-400">
                     เหมาะทั้งแบบครอบครัวและกลุ่มเพื่อน
                   </p>
@@ -236,7 +236,7 @@ export default function Home() {
           แกลเลอรี
         </p>
         <h2 className="mt-2 text-3xl font-bold md:text-4xl">
-          ดูภาพจริง ของหลังโครง
+          ดูภาพจริงของที่พัก
         </h2>
         <div className="mt-10 columns-2 gap-4 md:columns-3 [&>figure]:mb-4">
           {[
@@ -245,13 +245,13 @@ export default function Home() {
             { src: "/images/img0859.webp", alt: "ป้ายชื่อ PUYA BEACH VILLA อักษรดำ", span: "" },
             { src: "/images/img1948.webp", alt: "ห้องนอนโทนครีมเตียงแฝดหลายเตียง", span: "aspect-[4/3]" },
             { src: "/images/img1864.webp", alt: "ห้องนั่งเล่นโซฟาและโต๊ะพูล", span: "" },
-            { src: "/images/img1869.webp", alt: "ห้องนอนเตียงแฝดมุมตู้แขนไม้", span: "aspect-[4/3]" },
+            { src: "/images/img1869.webp", alt: "ห้องนอนเตียงแฝดมุมราวแขวนเสื้อไม้", span: "aspect-[4/3]" },
             { src: "/images/img1874.webp", alt: "ห้องนอนมองเห็นสระว่ายน้ำและสไลเดอร์", span: "" },
-            { src: "/images/img1872.webp", alt: "ผ้าขนหนูจัดมุมบนเตียงพร้อมดอกลีลาวัด", span: "aspect-[4/3]" },
+            { src: "/images/img1872.webp", alt: "ผ้าขนหนูจัดมุมบนเตียงพร้อมดอกลีลาวดี", span: "aspect-[4/3]" },
             { src: "/images/img0923.webp", alt: "ด้านหน้าบ้านสไตล์ขาวมินิมอลประดับกระถาง", span: "" },
-            { src: "/images/img1209.webp", alt: "จุดว่ายน้ำพร้อมอุปกรณ์เสริมสระว่ายน้ำ", span: "aspect-[4/3]" },
-            { src: "/images/img1225.webp", alt: "มุมน้ำสระพร้อมอาบทุกมุมยังยน", span: "" },
-            { src: "/images/img1319.webp", alt: "ป้ายร้าน PUYA BEACH VILLA สว่างไฟนีออน", span: "aspect-[4/3]" },
+            { src: "/images/img1209.webp", alt: "สระว่ายน้ำพร้อมวงยางลอยน้ำ", span: "aspect-[4/3]" },
+            { src: "/images/img1225.webp", alt: "มุมมองจากด้านบน: วงยางลอยน้ำและปลายสไลเดอร์", span: "" },
+            { src: "/images/img1319.webp", alt: "ป้าย PUYA BEACH VILLA เปิดไฟกลางคืน", span: "aspect-[4/3]" },
           ].map((img) => (
             <figure key={img.src} className="overflow-hidden rounded-xl">
               <div
@@ -283,21 +283,20 @@ export default function Home() {
             <div className="space-y-4">
               <p className="text-slate-600">
                 ช่องทางติดต่อผ่าน Line โดยตรงที่ <b>puyabeach</b>
-                หรือทางโซเชียลตามปุ่มด้านล่าง — ทีมต้องการข้อมูลด้วยเยี่ยม เร็วที่สุด
+                หรือทางโซเชียลตามปุ่มด้านล่าง — สอบถามและจองได้เร็วที่สุด
               </p>
               <SocialButtons size="lg" />
               <div className="overflow-hidden rounded-2xl border border-slate-200">
                 <iframe
                   title="แผนที่ PUYA Beach Villa"
-                  src="https://maps.google.com/maps?q=%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%20%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%B2%20%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%87%E0%B8%82%E0%B8%A5%E0%B8%B2&z=13&output=embed"
+                  src="https://maps.google.com/maps?q=PUYA%20Beach%20Villa%20%E0%B8%9E%E0%B8%B9%E0%B8%A2%E0%B9%88%E0%B8%B2%20%E0%B8%9A%E0%B8%B5%E0%B8%8A%20%E0%B8%A7%E0%B8%B4%E0%B8%A5%E0%B8%A5%E0%B9%88%E0%B8%B2&z=15&output=embed"
                   className="h-[360px] w-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
               <p className="text-sm text-slate-500">
-                📍 อำเภอเทพา จังหวัดสงขลา — แผนที่เป็นพิกัดระดับตำบล
-                ระยะละเอียดจะอัปเดตเมื่อมีพิกัดครบ
+                📍 อำเภอเทพา จังหวัดสงขลา — แผนที่ชี้ตำแหน่งจริงของที่พัก (กดป้ายในแผนที่เพื่อเปิดนำทางใน Google Maps ได้เลย)
               </p>
             </div>
             <div className="overflow-hidden rounded-2xl">

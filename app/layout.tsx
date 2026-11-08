@@ -9,7 +9,7 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://puya-web.vercel.app"),
+  metadataBase: new URL("https://puya-web-three.vercel.app"),
   title: "PUYA Beach Villa | พูลวิลล่าริมทะเล อ.เทพา จ.สงขลา",
   description:
     "พูลวิลล่าสัญชาติไทยแบบมินิมอลติดชายหาด อ.เทพา จ.สงขลา มีสระว่ายน้ำและสไลเดอร์น้ำ เหมาะกับครอบครัวและกลุ่มเพื่อน จอง/สอบถามผ่าน Facebook, TikTok และ Line",
