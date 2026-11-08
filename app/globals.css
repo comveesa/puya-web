@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
-:root {
-  --sea: #2a9db5;
-  --sea-dark: #146b7e;
-  --sand: #f6f1e7;
+/* PUYA palette — Clean White / Warm Beige / Sand / Dark Charcoal */
+@theme {
+  --color-sand: #f6f2ea;
+  --color-beige: #e8dfcf;
+  --color-charcoal: #26292e;
+  --color-ink: #1d2126;
 }
 
 html {
   scroll-behavior: smooth;
+  /* กัน header fixed บังหัวข้อตอนกด anchor */
+  scroll-padding-top: 4.5rem;
 }
 
 body {
   background: #ffffff;
-  color: #1e2a30;
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-beige);
+  color: var(--color-ink);
 }
