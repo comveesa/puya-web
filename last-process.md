@@ -4,14 +4,28 @@
 > รายการใหม่เพิ่มไว้ด้านบนสุดของส่วน "บันทึกการทำงาน"
 
 ## สถานะปัจจุบัน (อ่านก่อน)
-- **Phase ปัจจุบัน:** Phase 5 — Deployment ✅ (เว็บขึ้นออนไลน์แล้ว!) → อยู่ใน Phase 6 Maintenance
+- **Phase ปัจจุบัน:** Phase 6 — Maintenance 🔵 (Redesign ครบแล้วทั้งไซต์, deploy จริง)
 - **เว็บออนไลน์:** https://puya-web-three.vercel.app
-- **เสร็จแล้ว:** Planning ✅ · Design ✅ · Development ✅ · Testing ✅ · Deploy ผ่าน Vercel ✅
-- **ขั้นถัดไป:** รอข้อมูลเพิ่มจากเจ้าของ (เบอร์โทร/ราคา/จำนวนเตียง) + แก้ไขเนื้อหาตามฟีดแบ็ก
+- **เสร็จแล้ว:** Planning ✅ · Design ✅ (รีดีไซน์ Minimal Luxury) · Development ✅ · Testing ✅ · Deploy ✅
+- **ขั้นถัดไป:** Phase 6 Growth — Google Search Console + Bing, custom domain, ข้อมูลเช็คอิน/มัดจำ, รีวิว Maps เพิ่ม
 
 ---
 
 ## บันทึกการทำงาน
+
+### [2026-11-08] 🔥 Redesign ใหญ่: 12-section Minimal Luxury + SEO suite ครบชุด
+- **ธีมใหม่:** Minimal Luxury / Modern Mediterranean — Clean White / Warm Beige `#e8dfcf` / Sand `#f6f2ea` / Dark Charcoal `#26292e` (token ใน `app/globals.css` @theme)
+- **โครงหน้าใหม่ 12 sections** (`app/page.tsx`): Hero (H1 เดียว "พูลวิลล่าเทพา ติดทะเล สงขลา – PUYA Beach Villa") → About → Villa 1&2 → Bedrooms 3 ห้อง → Pool & Water Slide → Facilities → Pricing & Booking (ราคาจริง 6,990/7,990) → Gallery 16 รูป → Reviews (ลิงก์รีวิวจริง Google Maps + FB ไม่แต่งรีวิว) → Location & Maps (iframe + ปุ่มเปิดแผนที่) → FAQ `<details>` → Final CTA
+- **Components ใหม่:** `SiteHeader` (fixed + nav), `StickyBookBar` (mobile ล่างจอ: LINE + โทร), `SiteFooter`, `BookingCta` (ปุ่มจอง LINE/โทร ใช้ซ้ำใน 5 sections), `SectionHeading`
+- **SEO suite:** metadata ใหม่ (title/description ใส่ keyword หลักครบ 4 ชุด), canonical, OG 1200×630, Twitter card, `app/sitemap.ts` + `app/robots.ts` (200 จริง), JSON-LD **LodgingBusiness** (ที่อยู่จริง 238 หมู่ 7 / พิกัด 6.8772047,100.9557731 / sameAs) + **FAQPage** (ใช้ `FAQ_ITEMS` ตรงกับ FAQ ที่แสดงบนหน้า)
+- **`lib/business.ts`** = แหล่งข้อมูลเดียว (ที่อยู่, โทร, LINE ~puyabeach, FB/TikTok, Maps `GgQNT7SHbMB6YrKZA`, ราคา, ของฟรี, ห้องนอน, สิ่งอำนวยความสะดวก 8 ชุด, แกลเลอรี, FAQ)
+- ใช้รูปชุดใหม่ img6xxx (ห้องนอนติดสระ img6811, ห้องวิวทะเล img6810, โต๊ะพูลวิวทะเล img6708, ลาน BBQ ริมทะเล img6757, ห้องอาบน้ำกลางแจ้ง img6742) — ทุกภาพเป็นภาพจริงจากเจ้าของ
+- **QA:** `npm run build` ผ่าน (static, First Load JS ~108 kB) · ทุกข้อความสำคัญยืนยันใน HTML ที่ serve จริง (H1, ~puyabeach, 092-861-3745, 6,990/7,990, JSON-LD สองชุด) · Browser ทดสอบ: ไม่มี console error · **Lighthouse: Accessibility 100 / Best Practices 100 / SEO 83** (SEO ติดแค่ "ไม่มี meta description" ซึ่งเป็น **false alarm ของ dev mode** — ยืนยัน HTML จริงมี meta description สองรอบ)
+- **แก้ contrast ตาม Lighthouse:** eyebrow `text-stone-500`→`text-stone-600`, ปุ่ม LINE `#06C755`→เขียวเข้ม **`#0A5C33`** (เขียว LINE สด+ตัวอักษรขาวผ่าน contrast ไม่ได้), ครบทุกจุดแล้ว
+- **ลิงก์ Maps เปลี่ยน** `QHRFVZVc4vvrps6d7` → `GgQNT7SHbMB6YrKZA` (ชี้ place เดียวกัน แต่ใช้ลิงก์หลักตาม Master Task)
+- ⚠️ เกร็ดเทคนิค: **ห้ามรัน `npm run build` ขณะ `npm run dev` เปิดอยู่** — cache `.next` พัง ("Cannot find module './770.js'"), วิธีแก้ = kill โปรเซส port 3000 → ลบ `.next` → restart
+- commit `ee41dfd` push สู่ main → Vercel auto-deploy
+- **ต่อไป:** ลงทะเบียน Google Search Console + Bing · custom domain · ข้อมูลเช็คอิน/เงื่อนไขมัดจำ (FAQ + fine print) · รีวิว Maps เพิ่ม
 
 ### [2026-11-08] ใส่ข้อมูลจริงครบรอบ: เบอร์โทร + รายละเอียดวิลล่า 3 ห้องนอน
 - เพิ่มปุ่มโทร **092-861-3745** (tel:+66928613745) ในหน้าติดต่อ + ลิงก์เปิด Google Maps

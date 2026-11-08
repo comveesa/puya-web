@@ -15,23 +15,32 @@
 | ชื่อโซนที่พัก | จอดรถ, พูลวิลล่า 1, พูลวิลล่า 2 (หลังพัก 2 หลัง ตกแต่งเหมือนกัน) |
 | เป้าหมาย | เว็บพรีเซนต์ภาษาไทย ไม่มีระบบจองในเว็บ — นำทางลูกค้าไปติดต่อผ่านโซเชียล |
 | ภาษาบนเว็บ | ไทยเท่านั้น |
-| ธีม | สีขาว–ฟ้าทะเล–ทราย เข้ากับตัวบ้านสีขาวมินิมอล + สระว่ายน้ำสีฟ้า + สไลเดอร์น้ำ |
+| ธีม | Minimal Luxury / Modern Mediterranean — Clean White / Warm Beige `#e8dfcf` / Sand `#f6f2ea` / Dark Charcoal `#26292e` (token ใน `app/globals.css` @theme) |
 
 ### ช่องทางติดต่อ (ใช้ในเว็บ)
 - Facebook: https://www.facebook.com/PUYA.Beach.Villa
 - TikTok: https://www.tiktok.com/@puya.beach.villa
 - Line: https://line.me/R/ti/p/~puyabeach (Line ID: puyabeach — เป็นบัญชีบุคคล จึงใช้รูปแบบ ~; หากวันหนึ่งสมัคร Line Official Account เปลี่ยนเป็น https://line.me/R/ti/p/@puyabeach)
 
-### ข้อมูลที่ยังขาด (ขอจากเจ้าของเมื่อได้)
-- ราคาที่พัก (ต่อหลัง/ต่อคืน)
+### ข้อมูลธุรกิจ (แหล่งข้อมูลเดียว: `lib/business.ts`)
+> แก้ข้อมูลธุรกิจทุกอย่างที่ไฟล์เดียวนี้ — metadata / JSON-LD / หน้าเว็บ / footer ดึงจากที่เดียวกัน
 
-### ข้อมูลสำคัญที่ได้รับแล้ว (ใช้ในเว็บแล้ว)
-- เบอร์โทรศัพท์: 092-861-3745 (ลิงก์โทร: tel:+66928613745)
-- แผนที่จริง: Google Maps place "PUYA Beach Villa พูย่า บีช วิลล่า" @ 6.8772047, 100.9557731 (ลิงก์เจ้าของ: https://maps.app.goo.gl/QHRFVZVc4vvrps6d7)
-- รายละเอียดพัก (ต่อหลัง): 3 ห้องนอน / 3 ห้องน้ำ / รับ 12 คน — ห้อง 1–3 ล้วนเตียง 5 ฟุต 2 เตียง (ห้อง 1 ติดสระ, ห้อง 3 ห้องน้ำในตัว ชั้น 2 วิวทะเล)
-- ฟรี: Wi-Fi, น้ำแข็งในลัง 40 ล., น้ำดื่ม 1 โหล, กาแฟ 12 ซอง, ถ่าน 2 กก.
-- ภายใน: ห้องครัวอุปกรณ์แยกชุดพุทธ/มุสลิม, ห้องปาร์ตี้+สมาร์ท TV 55", BBQ, โต๊ะพูล 7 ฟุต, สระ 3×6 ม.+ห่วงยาง, แอร์ทั้งหลัง (เว้นครัว), ตู้เย็น/หม้อหุงข้าว/กาน้ำร้อน/เตาแก๊ส/ไมโครเวฟ/เครื่องครัว-ภาชนะครบ, ครกตำ
-- Line ID เป็นบัญชีบุคคล → ลิงก์ต้องใช้ซาบ ~puyabeach ดูหัวข้อช่องทางติดต่อด้านบน
+- ชื่อ: PUYA Beach Villa (Google Maps: "PUYA Beach Villa พูย่า บีช วิลล่า")
+- ที่อยู่: 238 หมู่ 7 ตำบลเทพา อำเภอเทพา จังหวัดสงขลา 90150 · พิกัด 6.8772047, 100.9557731
+- Google Maps: https://maps.app.goo.gl/GgQNT7SHbMB6YrKZA (ลิงก์หลักจาก Master Task; ลิงก์เก่า QHRFVZVc4vvrps6d7 ชี้ place เดียวกัน)
+- โทร 092-861-3745 · LINE ~puyabeach · FB PUYA.Beach.Villa
+- วิลล่า 2 หลังเหมือนกัน: 3 ห้องนอน / 3 ห้องน้ำ / รับ 12 คน / สระ 3×6 ม. + สไลเดอร์น้ำ
+- **ราคา (ต่อหลัง/ต่อคืน):** อา.–พฤ. 6,990 บาท · ศุกร์–เสาร์ 7,990 บาท
+- รีวิว: **ห้ามแต่งรีวิว/คะแนนเอง** — หน้า Reviews ชี้ลูกค้าไปอ่านรีวิวจริงบน Google Maps + Facebook
+
+### กติกา SEO ที่ผูกไว้กับโค้ด
+- H1 เดียว: "พูลวิลล่าเทพา ติดทะเล สงขลา – PUYA Beach Villa" (ใน Hero เท่านั้น)
+- Title: "พูลวิลล่าเทพา ติดทะเล สงขลา | PUYA Beach Villa" (ใน `app/layout.tsx`)
+- Keyword หลัก: พูลวิลล่าเทพา / พูลวิลล่าเทพาติดทะเล / พูลวิลล่าติดทะเล เทพา / พูลวิลล่าเทพา สงขลา — ใช้เป็นธรรมชาติ ห้าม stuffing
+- JSON-LD: LodgingBusiness + FAQPage (FAQ แสดงจริงบนหน้า `<details>` — แก้ FAQ คู่กันที่หน้า + `FAQ_ITEMS`)
+- sitemap.xml + robots.txt สร้างอัตโนมัติจาก `app/sitemap.ts` / `app/robots.ts`
+- canonical → `https://puya-web-three.vercel.app` (แก้ตรงเดียวใน `app/layout.tsx` หากเปลี่ยนโดเมน)
+- Contrast: ปุ่ม LINE ใช้เขียวเข้ม `#0A5C33` (ไม่ใช่ LINE เขียวสด #06C755 เพราะ contrast ขาวไม่ผ่าน AA)
 
 ---
 
@@ -55,37 +64,31 @@
 ### Phase 1: Planning — ✅ เสร็จ
 - เก็บความต้องการเรียบร้อย (ดูหัวข้อ 1)
 
-### Phase 2: Analysis & Design — ✅ เสร็จ
-- โครงสร้างเว็บ (one-page เลื่อนลงยาว เหมาะกับมือถือ เพราะ traffic มาจาก FB/TikTok):
-  1. **Hero** — รูปบ้าน/สระว่ายน้ำ+สไลเดอร์, ชื่อรีสอร์ท, ปุ่มติดต่อ 3 ช่องทาง
-  2. **ที่พัก** — แนะนำ "พูลวิลล่า" ระบุว่ามี 2 หลังเหมือนกัน (รูปห้องนอน/เตียง/เฟอร์นิเจอร์)
-  3. **แกลเลอรี** — รูปจัดหมวด: ตัวบ้าน / ห้องนอน / สระและสไลเดอร์ / ชายหาด
-  4. **ติดต่อเรา** — Google Maps (อ.เทพา) + ปุ่ม Facebook / TikTok / Line
-- Font ภาษาไทย: Google Fonts ที่ next/font โหลด (แนะนำ Prompt หรือ Noto Sans Thai)
+### Phase 2: Analysis & Design — ✅ เสร็จ (รีดีไซน์ปี 2026)
+- โครงสร้างใหม่ 12 section ตาม SEO Master Task:
+  1. Hero (H1 เดียว + CTA) 2. About 3. Villa 1&2 4. Bedrooms 5. Pool & Water Slide
+  6. Facilities 7. Pricing & Booking 8. Gallery 9. Reviews (ลิงก์รีวิวจริง) 10. Location & Maps
+  11. FAQ `<details>` 12. Final Booking CTA
+- Component แยกใน `components/`: SiteHeader, StickyBookBar, SiteFooter, BookingCta (ปุ่ม LINE/โทร ใช้ซ้ำได้), SectionHeading
+- Font: Prompt (next/font, subsets thai+latin)
 
-### Phase 3: Development — 🔵 กำลังทำ
-ลำดับงาน:
-1. ✅ สร้าง `agent.md` + `last-process.md` + `README.md` + `.gitignore`
-2. ✅ git init + commit แรก
-3. ✅ สร้าง GitHub repo `comveesa/puya-web` + push
-4. ติดตั้ง Next.js + Tailwind (สร้าง scaffold เอง เพราะโฟลเดอร์มี `images/` อยู่แล้ว)
-5. แปลงรูป `images/` (HEIC 25 รูป + JPG 13 รูป) → `public/images/*.webp` (resize ให้เหมาะเว็บ, quality ~80)
-   - ⚠️ ต้องใช้แพ็กเกจ `heic-convert` (sharp ตัว prebuilt อ่าน HEIC ที่เข้ารหัส HEVC ของ iPhone ไม่ได้)
-   - ห้าม commit ไฟล์ HEIC ลง repo (ใหญ่ไป) — ทำให้ repo เบา
-   - เลือกรูปเด่น: Hero (สระ/สไลเดอร์/ตัวบ้าน), ห้องนอน (IMG_1948 ตัวอย่าง), ป้ายไม้
-6. สร้างหน้าเว็บ: layout → Hero → ที่พัก → แกลเลอรี → ติดต่อเรา
-7. ยังไม่ deploy จนกว่าเนื้อหาครบ
+### Phase 3: Development — ✅ เสร็จ (Redesign 2026-11-08)
+- ✅ `lib/business.ts` — ข้อมูลธุรกิจ + รูป + ราคา + FAQ (แหล่งเดียว)
+- ✅ หน้า `app/page.tsx` 12 sections ครบ ใช้ข้อมูลจาก lib
+- ✅ SEO ครบ: layout metadata (title/desc/OG/Twitter/canonical), `app/sitemap.ts`, `app/robots.ts`, JSON-LD (LodgingBusiness + FAQPage)
+- ✅ Sticky mobile booking bar (LINE + โทร) · รูปใหม่ชุด img6xxx นำมาใช้ (ห้องนอนวิวสระ, ลาน BBQ, โต๊ะพูลวิวทะเล)
 
-### Phase 4: Testing — ⏳ รอ
-- Responsive มือถือเป็นหลัก / ตรวจรูปโหลดเร็ว (lazy loading) / ลิงก์โซเชียลถูกต้อง
-- Lighthouse คะแนนต้องดี / SEO: title, description, Open Graph (สำหรับแชร์ FB/Line)
+### Phase 4: Testing — ✅ เสร็จ
+- `npm run build` ผ่าน (static prerender, First Load JS ~108 kB)
+- Browser ทดสอบจริง + Lighthouse: **Accessibility 100 / Best Practices 100 / SEO 83→94 (dev-mode false alarm เมื่อ prod มี meta description จริง)**
+- แก้ contrast ครบ: eyebrow สี stonewash-600, ปุ่ม LINE เขียวเข้ม #0A5C33
+- ⚠️ เกร็ด: ห้ามรัน `npm run build` ขณะ `npm run dev` เปิดอยู่ — cache .next พัง (ต้องลบ .next + restart)
 
-### Phase 5: Deployment — ⏳ รอ
-- เชื่อม GitHub repo → Vercel (Sign in ด้วยบัญชี GitHub `comveesa`)
-- โดเมนสำรอง: `puya-web.vercel.app` แล้วค่อยเชื่อม custom domain ภายหลังถ้ามี
+### Phase 5: Deployment — ✅ เสร็จ
+- Live: https://puya-web-three.vercel.app (auto-deploy จาก main ทุกครั้งที่ push)
 
-### Phase 6: Maintenance — ⏳ รอ
-- อัปเดตรูป/โปรโมชัน/ราคาตามฤดูกาล → push แล้ว Vercel deploy เอง
+### Phase 6: Maintenance — 🔵 ทำต่อเนื่อง
+- แผนเพิ่มอันดับต่อจากนี้: ลงทะเบียน Google Search Console + Bing, ติดตั้ง Analytics, เก็บข้อมูล check-in เงื่อนไขมัดจำ, รีวิวถ่ายขึ้น Maps เพิ่ม, custom domain + Share OG image ขนาด 1200×630
 
 ---
 
