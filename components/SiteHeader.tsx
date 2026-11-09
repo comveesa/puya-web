@@ -3,7 +3,7 @@ import { BookLineButton } from "./BookingCta";
 
 const NAV = [
   { href: "#about", label: "เกี่ยวกับเรา" },
-  { href: "#villas", label: "วิลล่า" },
+  { href: "#villas", label: "พูลวิลล่า" },
   { href: "#pool", label: "สระว่ายน้ำ" },
   { href: "#pricing", label: "ราคา" },
   { href: "#gallery", label: "แกลเลอรี" },

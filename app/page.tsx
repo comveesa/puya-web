@@ -13,7 +13,7 @@ const HOME_BADGES = [
 ];
 
 const VILLA_STATS = [
-  { n: "2", label: "หลังวิลล่าส่วนตัว" },
+  { n: "2", label: "หลังพูลวิลล่าส่วนตัว" },
   { n: "3", label: "ห้องนอน · 3 ห้องน้ำ" },
   { n: "12", label: "คนต่อหลัง" },
   { n: "3×6", label: "เมตร สระว่ายน้ำ" },
@@ -216,12 +216,12 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
             eyebrow="Villa 1 & Villa 2"
-            title="วิลล่าของเรา 2 หลัง ริมทะเล"
+            title="พูลวิลล่าของเรา 2 หลัง ริมทะเล"
             desc="สองหลังขนาดและอุปกรณ์เหมือนกันหมด — เลือกจองหลังเดียว หรือจองทั้งสองหลังพักกันใหญ่ได้ในครั้งเดียว"
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
-            <VillaCard title="วิลล่า 1" image={BUSINESS.villaImages[0]} />
-            <VillaCard title="วิลล่า 2" image={BUSINESS.villaImages[1]} />
+            <VillaCard title="พูลวิลล่า 1" image={BUSINESS.villaImages[0]} />
+            <VillaCard title="พูลวิลล่า 2" image={BUSINESS.villaImages[1]} />
           </div>
         </div>
       </section>

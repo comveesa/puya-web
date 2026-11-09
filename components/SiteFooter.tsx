@@ -2,7 +2,7 @@ import { BUSINESS, BUSINESS_ADDRESS_FULL } from "@/lib/business";
 
 const NAV = [
   { href: "#about", label: "เกี่ยวกับเรา" },
-  { href: "#villas", label: "วิลล่า" },
+  { href: "#villas", label: "พูลวิลล่า" },
   { href: "#pricing", label: "ราคา & การจอง" },
   { href: "#gallery", label: "แกลเลอรี" },
   { href: "#location", label: "ที่ตั้ง & แผนที่" },
@@ -25,7 +25,7 @@ export function SiteFooter() {
               PUYA <span className="font-medium text-sand">Beach Villa</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-sand/75">
-              {BUSINESS.tagline} — วิลล่าส่วนตัว 2 หลัง 3 ห้องนอน 3 ห้องน้ำ
+              {BUSINESS.tagline} — พูลวิลล่าส่วนตัว 2 หลัง 3 ห้องนอน 3 ห้องน้ำ
               รับได้ถึง 12 คนต่อหลัง สระว่ายน้ำพร้อมสไลเดอร์ จองตรงกับเจ้าของ
             </p>
           </div>
