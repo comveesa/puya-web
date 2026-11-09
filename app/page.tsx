@@ -264,7 +264,7 @@ export default function Home() {
             tone="dark"
             eyebrow="Private Pool & Water Slide"
             title="สระว่ายน้ำส่วนตัว + สไลเดอร์"
-            desc={`สระส่วนตัวขนาด ${BUSINESS.poolSize} พร้อมสไลเดอร์และห่วงยางแฟนซี — เด็ก ๆ สนุกทั้งวัน ผู้ใหญ่ผ่อนคลายกับวิวทะเลด้านหลังบ้าน`}
+            desc={`สระส่วนตัวขนาด ${BUSINESS.poolSize} พร้อมสไลเดอร์และห่วงยางแฟนซี — เด็ก ๆ สนุกทั้งวัน ผู้ใหญ่ผ่อนคลายกับวิวทะเลด้านหน้า`}
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {BUSINESS.poolImages.map((img) => (
