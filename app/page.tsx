@@ -231,7 +231,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="Bedrooms"
           title="3 ห้องนอน · 3 ห้องน้ำ · รับ 12 คน"
-          desc="ทุกห้องมีเตียง 5 ฟุต 2 เตียง ผ้าปู–ผ้าห่ม–ผ้าขนหนูพร้อมใช้ และแอร์เย็นสบาย"
+          desc="ทุกห้องมีเตียง 5 ฟุต 2 เตียง ราวแขวนผ้า-ไดร์เป่าผมพร้อมใช้ และแอร์เย็นสบาย"
         />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {BUSINESS.rooms.map((room) => (
