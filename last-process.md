@@ -13,6 +13,12 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-09] เปลี่ยนรูป Villa 1 → IMG_0608
+- เจ้าของขอใช้รูป **IMG_0608** (สระ + สไลเดอร์สีส้มหน้าตึกวิลล่าขาว วิวทะเลชัด) แทนที่ในการ์ด Villa 1
+- แปลง `IMG_0608.HEIC` → `public/images/img0608.webp` (4032×3024 → กว้าง 1600, quality 78) ด้วยสคริปต์ใหม่ `scripts/convert-one.mjs` (แปลงรายไฟล์ ไม่ต้องรัน convert ทั้งชุด)
+- อัปเดต `lib/business.ts` → `villaImages[0]` (รูปเดิม img6708 ยังใช้อยู่ในแกลเลอรี ไม่หายไปไหน)
+- Build ผ่าน (static ยืนยัน img0608 ใน HTML แล้ว) → commit `ec0cbd5` push main → Vercel auto-deploy
+
 ### [2026-11-08] 🔥 Redesign ใหญ่: 12-section Minimal Luxury + SEO suite ครบชุด
 - **ธีมใหม่:** Minimal Luxury / Modern Mediterranean — Clean White / Warm Beige `#e8dfcf` / Sand `#f6f2ea` / Dark Charcoal `#26292e` (token ใน `app/globals.css` @theme)
 - **โครงหน้าใหม่ 12 sections** (`app/page.tsx`): Hero (H1 เดียว "พูลวิลล่าเทพา ติดทะเล สงขลา – PUYA Beach Villa") → About → Villa 1&2 → Bedrooms 3 ห้อง → Pool & Water Slide → Facilities → Pricing & Booking (ราคาจริง 6,990/7,990) → Gallery 16 รูป → Reviews (ลิงก์รีวิวจริง Google Maps + FB ไม่แต่งรีวิว) → Location & Maps (iframe + ปุ่มเปิดแผนที่) → FAQ `<details>` → Final CTA
