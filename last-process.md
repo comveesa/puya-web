@@ -13,6 +13,16 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-09] (23) Gallery Lightbox + Image Viewer
+- เพิ่ม `components/GalleryLightbox.tsx` (client component, ไม่เพิ่ม dependency — ปุ่มใช้ inline SVG)
+- คลิก thumbnail → ภาพใหญ่กลางจอบน overlay ดำโปร่ง `bg-black/90` + blur; ปุ่ม X มุมขวาบน, ลูกศร prev/next, นับลำดับ "n / 16", caption = alt ของรูป
+- ควบคุม: ← → เลื่อนภาพ (วนกลับจนสุด), ESC ปิด, คลิกพื้นนอกภาพปิด, คลิกตัวภาพไม่ปิด, swipe ซ้าย/ขวาบนมือถือ
+- Animation: `lb-fade` (overlay เข้า–ออก) + `lb-zoom` (ภาพ zoom–fade ตอนเปิดและเปลี่ยนภาพ) — เพิ่มใน `app/globals.css`
+- ล็อก body scroll ขณะเปิด · `role="dialog" aria-modal` + focus ปุ่มปิดทันที · `object-contain` คงสัดส่วนจริง
+- ภาพชุดเดิม 16 รูปใน `BUSINESS.gallery` — ไม่แตะไฟล์/URL; grid เดิม (masonry, lazy) ห่อด้วย `<button>` แทน div เดิม
+- `app/page.tsx`: แทนก้อน grid ด้วย `<GalleryLightbox images={BUSINESS.gallery} />` + import
+- Static HTML ยังมีรูป+alt ครบ 16 จุด (SEO ไม่กระทบ) — build ผ่าน
+
 ### [2026-11-09] (22) แก้หัวเรื่อง+คำโปรย section Gallery
 - "แกลลอรี่ภาพจริงจากบ้าน" → **"เก็บภาพความประทับใจจาก PUYA"**
 - คำโปรย → **"รวมภาพบรรยากาศจริงของบ้านพัก สระว่ายน้ำ และวิวทะเลเทพา"** (ตามเจ้าของ)

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickyBookBar } from "@/components/StickyBookBar";
 import { SiteFooter } from "@/components/SiteFooter";
+import { GalleryLightbox } from "@/components/GalleryLightbox";
 
 const HOME_BADGES = [
   "จองตรงกับเจ้าของ",
@@ -363,21 +364,7 @@ export default function Home() {
             title="เก็บภาพความประทับใจจาก PUYA"
             desc="รวมภาพบรรยากาศจริงของบ้านพัก สระว่ายน้ำ และวิวทะเลเทพา"
           />
-          <div className="mt-12 columns-2 gap-4 md:columns-3 [&>figure]:mb-4">
-            {BUSINESS.gallery.map((img) => (
-              <figure key={img.src} className="overflow-hidden rounded-2xl">
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition duration-500 hover:scale-105"
-                    sizes="(min-width: 768px) 33vw, 50vw"
-                  />
-                </div>
-              </figure>
-            ))}
-          </div>
+          <GalleryLightbox images={BUSINESS.gallery} />
         </div>
       </section>
 
