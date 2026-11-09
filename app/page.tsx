@@ -348,7 +348,7 @@ export default function Home() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm text-stone-600">
-          *จองโดยตัดมัดจำ — รายละเอียดเช็คอิน/ช่องทางการจ่าย สอบถามกับเจ้าของโดยตรงผ่าน LINE
+          *การจองมีค่ามัดจำ 3,000 บาท — รายละเอียดเช็คอิน/ช่องทางการจอง สอบถามกับเจ้าของโดยตรงผ่าน LINE หรือโทรศัพท์
         </p>
         <div className="mt-8">
           <BookingCta />
