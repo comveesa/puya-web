@@ -44,7 +44,7 @@ export const BUSINESS = {
 
   /** ราคาจริงจากเจ้าของ (ต่อหลัง/ต่อคืน) */
   pricing: [
-    { id: "weekday", day: "อา.–พฤ.", price: 6990 },
+    { id: "weekday", day: "อาทิตย์-พฤหัสบดี", price: 6990 },
     { id: "weekend", day: "ศุกร์–เสาร์", price: 7990 },
   ],
 

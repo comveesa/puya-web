@@ -115,7 +115,7 @@ function VillaCard({
           <b className="text-lg text-ink">
             ฿{BUSINESS.pricing[0].price.toLocaleString("th-TH")}
           </b>{" "}
-          /คืน (อา.–พฤ.)
+          /คืน (อาทิตย์-พฤหัสบดี)
         </p>
         <a
           href="#pricing"
