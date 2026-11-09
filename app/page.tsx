@@ -293,7 +293,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Facilities"
             title="ครบทุกอย่างสำหรับปาร์ตี้และความสบาย"
-            desc="อยากร้องเพลง เล่นบิลเลียด ทำอาหาร หรือย่าง BBQ ริมทะเล — อยู่ที่เดียวจบทุกกิจกรรม"
+            desc="อยากร้องเพลง เล่นโต๊ะพูล ทำอาหาร หรือปิ้งย่าง BBQ ริมสระ — อยู่ที่เดียวจบทุกกิจกรรม"
           />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {BUSINESS.facilities.map((f) => (
