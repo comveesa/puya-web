@@ -6,7 +6,7 @@ const NAV = [
   { href: "#villas", label: "พูลวิลล่า" },
   { href: "#pool", label: "สระว่ายน้ำ" },
   { href: "#pricing", label: "ราคา" },
-  { href: "#gallery", label: "แกลเลอรี" },
+  { href: "#gallery", label: "แกลลอรี่" },
   { href: "#location", label: "ที่ตั้ง" },
 ];
 

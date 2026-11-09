@@ -4,7 +4,7 @@ const NAV = [
   { href: "#about", label: "เกี่ยวกับเรา" },
   { href: "#villas", label: "พูลวิลล่า" },
   { href: "#pricing", label: "ราคา & การจอง" },
-  { href: "#gallery", label: "แกลเลอรี" },
+  { href: "#gallery", label: "แกลลอรี่" },
   { href: "#location", label: "ที่ตั้ง & แผนที่" },
   { href: "#faq", label: "คำถามที่พบบ่อย" },
 ];

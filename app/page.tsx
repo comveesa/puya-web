@@ -360,7 +360,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
             eyebrow="Gallery"
-            title="แกลเลอรีภาพจริงจากบ้าน"
+            title="แกลลอรี่ภาพจริงจากบ้าน"
             desc="ทุกภาพถ่ายที่ทำเนาบรรยากาศจริงของ PUYA Beach Villa ตำบลเทพา อำเภอเทพา จังหวัดสงขลา"
           />
           <div className="mt-12 columns-2 gap-4 md:columns-3 [&>figure]:mb-4">
