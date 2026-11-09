@@ -27,7 +27,7 @@ const OG_IMAGE = {
   url: "/images/img1928.webp",
   width: 1200,
   height: 630,
-  alt: "สระว่ายน้ำส่วนตัวและสไลเดอร์น้ำของ Puya Beach Villa พูลวิลล่าเทพาติดทะเล สงขลา",
+  alt: "สระว่ายน้ำส่วนตัวและสไลเดอร์ของ Puya Beach Villa พูลวิลล่าเทพาติดทะเล สงขลา",
 };
 
 export async function generateMetadata({

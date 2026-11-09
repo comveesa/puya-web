@@ -13,6 +13,9 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-09] (8) เรียก "สไลเดอร์" แทน "สไลเดอร์น้ำ"
+- เจ้าของขอใช้คำ **"สไลเดอร์"** ทั้งเว็บ — replace ครบ 13 จุดใน 3 ไฟล์ (`lib/business.ts` 6, `app/page.tsx` 6, `app/layout.tsx` 1 ลง OG alt) ครอบคลุม: badge Hero, hero copy, หัวข้อ section Pool, การ์ด Facilities, FAQ, JSON-LD amenity (ชื่ออังกฤษ "Water Slide" คงเดิมตาม schema), alt รูป และ OG alt
+
 ### [2026-11-09] (7) สะกด "แกลลอรี่"
 - เจ้าของขอใช้สะกด **แกลลอรี่** (ไม่ใช่ "แกลเลอรี" ตามราชบัณฑิตฯ) — แก้ครบ: หัวข้อ section Gallery (H2), เมนู Header + Footer nav, คอมเมนต์ใน lib
 

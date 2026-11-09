@@ -9,7 +9,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 const HOME_BADGES = [
   "จองตรงกับเจ้าของ",
   `รับ ${BUSINESS.capacity} คน/หลัง`,
-  `สระ ${BUSINESS.poolSize} + สไลเดอร์น้ำ`,
+  `สระ ${BUSINESS.poolSize} + สไลเดอร์`,
 ];
 
 const VILLA_STATS = [
@@ -20,7 +20,7 @@ const VILLA_STATS = [
 ];
 
 const VILLA_FEATURES = [
-  "สระว่ายน้ำส่วนตัว 3×6 ม. + สไลเดอร์น้ำ",
+  "สระว่ายน้ำส่วนตัว 3×6 ม. + สไลเดอร์",
   "ห้องปาร์ตี้ + คาราโอเกะ · สมาร์ท TV 55 นิ้ว",
   "โต๊ะพูล 7 ฟุต",
   "ห้องครัวอุปกรณ์ครบ (แยกชุดพุทธ/มุสลิม)",
@@ -137,7 +137,7 @@ export default function Home() {
       <section id="home" className="relative flex min-h-[100svh] items-end overflow-hidden bg-charcoal">
         <Image
           src={BUSINESS.heroImage}
-          alt="สระว่ายน้ำส่วนตัว สไลเดอร์น้ำ และบ้านขาวของ PUYA Beach Villa พูลวิลล่าเทพาติดทะเล"
+          alt="สระว่ายน้ำส่วนตัว สไลเดอร์ และบ้านขาวของ PUYA Beach Villa พูลวิลล่าเทพาติดทะเล"
           fill
           priority
           className="object-cover"
@@ -156,7 +156,7 @@ export default function Home() {
           </h1>
           <p className="mt-5 max-w-2xl text-sand/90 md:text-lg">
             บ้านขาวสไตล์มินิมอล 2 หลัง ริมชายหาดเทพา — สระว่ายน้ำส่วนตัว {BUSINESS.poolSize}{" "}
-            พร้อมสไลเดอร์น้ำ คาราโอเกะ โต๊ะพูล ห้องครัวครบ และโซน BBQ ริมทะเล
+            พร้อมสไลเดอร์ คาราโอเกะ โต๊ะพูล ห้องครัวครบ และโซน BBQ ริมทะเล
           </p>
           <div className="mt-8">
             <BookingCta tone="dark" />
@@ -263,8 +263,8 @@ export default function Home() {
           <SectionHeading
             tone="dark"
             eyebrow="Private Pool & Water Slide"
-            title="สระว่ายน้ำส่วนตัว + สไลเดอร์น้ำ"
-            desc={`สระส่วนตัวขนาด ${BUSINESS.poolSize} พร้อมสไลเดอร์น้ำและห่วงยางแฟนซี — เด็ก ๆ สนุกทั้งวัน ผู้ใหญ่ผ่อนคลายกับวิวทะเลด้านหลังบ้าน`}
+            title="สระว่ายน้ำส่วนตัว + สไลเดอร์"
+            desc={`สระส่วนตัวขนาด ${BUSINESS.poolSize} พร้อมสไลเดอร์และห่วงยางแฟนซี — เด็ก ๆ สนุกทั้งวัน ผู้ใหญ่ผ่อนคลายกับวิวทะเลด้านหลังบ้าน`}
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {BUSINESS.poolImages.map((img) => (
