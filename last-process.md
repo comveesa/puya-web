@@ -13,6 +13,16 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-09] (2) SEO Deep-pass ตามเช็กลิสต์บรีฟรอบ 2
+- **`generateMetadata`** แทน static `metadata` (App Router ถูกต้อง — next/head เป็นของ Pages Router) · โดเมนอ่านจาก **env `NEXT_PUBLIC_SITE_URL`** พร้อมสลับ custom domain จุดเดียว
+- **Title ใหม่** (ตามบรีฟ): "Puya Beach Villa พูลวิลล่าเทพา ติดทะเล สงขลา พูลวิลล่า 2 หลังริมหาดส่วนตัว"
+- **Meta description** ตัดใหม่เหลือ **131 ตัวอักษร** (เกณฑ์ ≤160) ครบ keyword หลัก + ราคา/จองตรง
+- เพิ่มคีย์เวิร์ด target ใหม่: **พูลวิลล่าสงขลา / พูลวิลล่าสงขลาติดทะเล** (keywords meta + ย่อหน้า About)
+- **JSON-LD เพิ่ม `hasMap`** ชี้ Google Maps place (ยืนยันพิกัดต่อ Local Pack)
+- คำสะกดผิดดักทราฟฟิก "พุลวิลล่าเทพา / พุลวิลล่าสงขลา": ใส่ใน **alt รูป 2 จุด** (ไม่ลง visible copy เพื่อไม่ให้ลูกค้าเห็น typo จริง — ถ้าเจ้าของอยากได้ในเนื้อหา แจ้งแล้วเปลี่ยนได้)
+- Google Maps iframe มีอยู่แล้วใน section Location (ยืนยันครบเกณฑ์แผนที่ฝัง)
+- Build ผ่าน → ยืนยัน static HTML มี title/keyword/hasMap/misspell ครบ → push main
+
 ### [2026-11-09] เปลี่ยนรูป Villa 1 → IMG_0608
 - เจ้าของขอใช้รูป **IMG_0608** (สระ + สไลเดอร์สีส้มหน้าตึกวิลล่าขาว วิวทะเลชัด) แทนที่ในการ์ด Villa 1
 - แปลง `IMG_0608.HEIC` → `public/images/img0608.webp` (4032×3024 → กว้าง 1600, quality 78) ด้วยสคริปต์ใหม่ `scripts/convert-one.mjs` (แปลงรายไฟล์ ไม่ต้องรัน convert ทั้งชุด)

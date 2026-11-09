@@ -35,7 +35,7 @@
 
 ### กติกา SEO ที่ผูกไว้กับโค้ด
 - H1 เดียว: "พูลวิลล่าเทพา ติดทะเล สงขลา – PUYA Beach Villa" (ใน Hero เท่านั้น)
-- Title: "พูลวิลล่าเทพา ติดทะเล สงขลา | PUYA Beach Villa" (ใน `app/layout.tsx`)
+- Title: "Puya Beach Villa พูลวิลล่าเทพา ติดทะเล สงขลา พูลวิลล่า 2 หลังริมหาดส่วนตัว" (ใน `app/layout.tsx` — ใช้ `generateMetadata` อ่านโดเมนจาก env `NEXT_PUBLIC_SITE_URL`)
 - Keyword หลัก: พูลวิลล่าเทพา / พูลวิลล่าเทพาติดทะเล / พูลวิลล่าติดทะเล เทพา / พูลวิลล่าเทพา สงขลา — ใช้เป็นธรรมชาติ ห้าม stuffing
 - JSON-LD: LodgingBusiness + FAQPage (FAQ แสดงจริงบนหน้า `<details>` — แก้ FAQ คู่กันที่หน้า + `FAQ_ITEMS`)
 - sitemap.xml + robots.txt สร้างอัตโนมัติจาก `app/sitemap.ts` / `app/robots.ts`

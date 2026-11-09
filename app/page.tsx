@@ -38,6 +38,8 @@ const LODGING_JSONLD = {
   url: BUSINESS.url,
   image: `${BUSINESS.url}${BUSINESS.heroImage}`,
   telephone: BUSINESS.phoneIntl,
+  // ลิงก์ Google Maps ตรงไปตรงมา — Google ใช้ยืนยันพิกัดและเกาะ Local Pack
+  hasMap: BUSINESS.googleMapsUrl,
   priceRange: "฿฿",
   address: {
     "@type": "PostalAddress",
@@ -180,8 +182,9 @@ export default function Home() {
               desc={`ที่พักเทพา สงขลา สไตล์ Modern Mediterranean — บ้านขาวเตี้ย ๆ ริมชายหาดตำบลเทพา จังหวัดสงขลา เดินถึงทะเลได้ทันที บรรยากาศเงียบสงบ คนน้อย เหมาะทั้งครอบครัวและกลุ่มเพื่อนที่อยากพักแบบส่วนตัว`}
             />
             <p className="mt-4 max-w-2xl leading-relaxed text-stone-600">
-              พูลวิลล่าติดทะเล {BUSINESS.villas} หลัง ขนาดและการตกแต่งเหมือนกันทุกหลัง —
-              จองหลังเดียวพักได้ถึง {BUSINESS.capacity} คน หรือจองทั้งสองหลังสำหรับกลุ่มใหญ่
+              พูลวิลล่าสงขลาติดทะเล {BUSINESS.villas} หลัง
+              ขนาดและการตกแต่งเหมือนกันทุกหลัง — จองหลังเดียวพักได้ถึง{" "}
+              {BUSINESS.capacity} คน หรือจองทั้งสองหลังสำหรับกลุ่มใหญ่
               พร้อมของใช้และอุปกรณ์ครบ ห่วงยางแฟนซี และของฟรีทุกการเข้าพัก
             </p>
             <dl className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
