@@ -69,7 +69,7 @@ export function GalleryLightbox({ images }: { images: readonly GalleryItem[] }) 
   return (
     <div>
       {/* Masonry grid — รูปเดิมทั้งชุด lazy loading เหมือนเดิม */}
-      <div className="mt-12 columns-2 gap-4 md:columns-3 [&>figure]:mb-4">
+      <div className="mt-12 columns-2 gap-4 md:columns-4 [&>figure]:mb-4">
         {gallery.map((thumb, i) => (
           <figure key={thumb.src} className="overflow-hidden rounded-2xl">
             <button

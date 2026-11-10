@@ -13,6 +13,9 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (24) Gallery: 4 คอลัมน์บน desktop
+- เดิม mobile 2 · md:3 คอลัมน์ → **mobile 2 · md:4 คอลัมน์** (`columns-2 md:columns-4`) — 16 รูปเรียงเป็น 4 แถวพอดี ถ้าต้องการ 4 คอลัมน์ตั้งแต่มือถือแจ้งได้
+
 ### [2026-11-09] (23) Gallery Lightbox + Image Viewer
 - เพิ่ม `components/GalleryLightbox.tsx` (client component, ไม่เพิ่ม dependency — ปุ่มใช้ inline SVG)
 - คลิก thumbnail → ภาพใหญ่กลางจอบน overlay ดำโปร่ง `bg-black/90` + blur; ปุ่ม X มุมขวาบน, ลูกศร prev/next, นับลำดับ "n / 16", caption = alt ของรูป
