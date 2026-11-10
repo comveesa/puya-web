@@ -13,6 +13,11 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (26) Premium Overhaul #2: logic คิดราคาจอง (`lib/pricing.ts`)
+- เพิ่ม `BUSINESS.depositPerVilla = 3000` (ยืนยันเจ้าของ: มัดจำต่อหลัง สองหลัง = 6,000)
+- `lib/pricing.ts`: `VillaChoice` (villa1/villa2/both) · `calcEstimate` นับราคาทีละคืน (ศ.-ส. 7,990 / อื่น ๆ 6,990 × จำนวนหลัง, อ่านจาก BUSINESS.pricing) คืน null ถ้าวันไม่ถูก · `composeLineMessage` เรียบเรียงข้อความไทยสำหรับวางใน LINE (สำนวนกลาง ไม่มีคำลงท้ายเพศ)
+- Parse วันที่แบบเวลาท้องถิ่น (กัน UTC shift) · Build ผ่าน (110 kB) · ขั้นถัดไป: BookingPlanner
+
 ### [2026-11-10] (25) Premium Overhaul #1: og:image JPEG 1200×630 จริง
 - Script ใหม่ `scripts/make-og.mjs` (sharp) — crop cover จาก img1928.webp → `public/images/og-puya.jpg` (ยืนยัน metadata: jpeg 1200×630)
 - `app/layout.tsx`: OG + Twitter ชี้ `/images/og-puya.jpg` (เดิมชี้ webp สัดส่วน 4:3 ที่ประกาศ 1200×630 ไม่ตรงจริง — บางแพลตฟอร์มแชร์แล้วรูปไม่โชว์)
