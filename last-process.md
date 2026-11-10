@@ -13,6 +13,11 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (31) Premium Overhaul #7: เมนูมือถือ hamburger
+- `components/SiteHeader.tsx` เป็น client component: จอ <lg ปุ่ม hamburger (inline SVG สลับ burger/X) แทนปุ่ม "ดูราคา" → เปิด panel ใต้ header (bg white, ขอบ beige, เงา): NAV ครบ 6 + ปุ่มจองผ่าน LINE · จอ ≥lg คงเมนูแนวนอนเดิมทุกอย่าง
+- ปิดเมื่อ: กดลิงก์ / กด X / คลิกนอก panel / กด ESC / ย่อ-ขยายจอข้าม lg (matchMedia) · ล็อก scroll ตอนเปิด คืนเมื่อปิด · `aria-expanded`/`aria-controls`/`aria-label` ครบ
+- ตรวจ browser (<lg 606px): เปิด/ปิดทุกวิธี ✅ ลิงก์พาไป anchor ถูกที่ (scroll-padding-top กัน header บัง) ✅ · Build ผ่าน 117 kB (First Load เพิ่มจาก header เป็น client — ยัง ≤ 120) · ขั้นถัดไป: Task 8 QA รวบยอด + push
+
 ### [2026-11-10] (30) Premium Overhaul #6: scroll reveal (ไม่เพิ่ม dependency)
 - `components/ScrollReveal.tsx` ใหม่ (client): เพิ่ม `has-reveal` บน `<html>` ตอน hydrate → IntersectionObserver (threshold 0.15) ใส่ `is-visible` ทีละ block แล้ว unobserve · cleanup ครบ
 - `app/globals.css`: CSS reveal (fade-up 24px, 0.7s) — **opacity:0 ถูก scope ใต้ `.has-reveal` เท่านั้น** (server HTML ไม่มี class นี้ = ปิด JS เนื้อหาโชว์ปกติ) + `@media prefers-reduced-motion` ปิดทรานสิชัน
