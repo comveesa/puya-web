@@ -13,6 +13,11 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (25) Premium Overhaul #1: og:image JPEG 1200×630 จริง
+- Script ใหม่ `scripts/make-og.mjs` (sharp) — crop cover จาก img1928.webp → `public/images/og-puya.jpg` (ยืนยัน metadata: jpeg 1200×630)
+- `app/layout.tsx`: OG + Twitter ชี้ `/images/og-puya.jpg` (เดิมชี้ webp สัดส่วน 4:3 ที่ประกาศ 1200×630 ไม่ตรงจริง — บางแพลตฟอร์มแชร์แล้วรูปไม่โชว์)
+- Build ผ่าน (First Load JS 110 kB) · ขั้นถัดไป: lib/pricing.ts ตามแผน `docs/superpowers/plans/2026-11-10-puya-premium-overhaul.md`
+
 ### [2026-11-10] (24) Gallery: 4 คอลัมน์บน desktop
 - เดิม mobile 2 · md:3 คอลัมน์ → **mobile 2 · md:4 คอลัมน์** (`columns-2 md:columns-4`) — 16 รูปเรียงเป็น 4 แถวพอดี ถ้าต้องการ 4 คอลัมน์ตั้งแต่มือถือแจ้งได้
 

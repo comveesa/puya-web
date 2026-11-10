@@ -24,7 +24,7 @@ const DESCRIPTION =
   "พูลวิลล่าเทพาติดทะเล สงขลา 2 หลังริมหาดส่วนตัว 3 ห้องนอน รับ 12 คน สระว่ายน้ำ+สไลเดอร์ คาราโอเกะ BBQ จองตรงเจ้าของ โทร 092-861-3745";
 
 const OG_IMAGE = {
-  url: "/images/img1928.webp",
+  url: "/images/og-puya.jpg",
   width: 1200,
   height: 630,
   alt: "สระว่ายน้ำส่วนตัวและสไลเดอร์ของ Puya Beach Villa พูลวิลล่าเทพาติดทะเล สงขลา",
@@ -72,7 +72,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: TITLE,
       description: DESCRIPTION,
-      images: [OG_IMAGE.url],
+      images: ["/images/og-puya.jpg"],
     },
   };
 }
