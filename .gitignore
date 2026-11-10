@@ -29,6 +29,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# superpowers working files (local)
+.superpowers/
+
 # รูปต้นฉบับ (ใหญ่ ไม่ commit — ใช้แค่ในเครื่องสำหรับแปลง)
 /images/
 ```

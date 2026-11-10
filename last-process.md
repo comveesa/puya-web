@@ -13,6 +13,11 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (32) Premium Overhaul #8: QA รวบยอด + push (จบแผน)
+- QA บน prod build (`npm run build` 117 kB → `npm start`): **Lighthouse Accessibility 100 · Best Practices 100 · SEO 100** (เครื่องมือในแอปไม่วัด Performance) · static HTML ครบ: H1 ×1, title/desc เดิม, JSON-LD LodgingBusiness+FAQPage, โทร 092-861-3745, LINE ~puyabeach, ราคา 6,990/7,990, รูปแกลลอรี่ครบ 16 ใบ · ปุ่ม LINE เขียว #0A5C33 ครบ 6 จุด · ฟอร์มจองตรวจครบทุก case (Task 3)
+- เอกสาร: `.gitignore` เพิ่ม `.superpowers/` · `agent.md` หัวข้อ 1 (ธีม editorial luxury + Playfair + flow A BookingPlanner) และหัวข้อ 3 (Phase 4 คะแนนใหม่ + สรุปรอบ Premium Overhaul)
+- Push origin main (BASE 84d1b5a) → Vercel auto-deploy → ตรวจหน้าเว็บจริง 1 รอบ
+
 ### [2026-11-10] (31) Premium Overhaul #7: เมนูมือถือ hamburger
 - `components/SiteHeader.tsx` เป็น client component: จอ <lg ปุ่ม hamburger (inline SVG สลับ burger/X) แทนปุ่ม "ดูราคา" → เปิด panel ใต้ header (bg white, ขอบ beige, เงา): NAV ครบ 6 + ปุ่มจองผ่าน LINE · จอ ≥lg คงเมนูแนวนอนเดิมทุกอย่าง
 - ปิดเมื่อ: กดลิงก์ / กด X / คลิกนอก panel / กด ESC / ย่อ-ขยายจอข้าม lg (matchMedia) · ล็อก scroll ตอนเปิด คืนเมื่อปิด · `aria-expanded`/`aria-controls`/`aria-label` ครบ

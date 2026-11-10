@@ -15,7 +15,8 @@
 | ชื่อโซนที่พัก | จอดรถ, พูลวิลล่า 1, พูลวิลล่า 2 (หลังพัก 2 หลัง ตกแต่งเหมือนกัน) |
 | เป้าหมาย | เว็บพรีเซนต์ภาษาไทย ไม่มีระบบจองในเว็บ — นำทางลูกค้าไปติดต่อผ่านโซเชียล |
 | ภาษาบนเว็บ | ไทยเท่านั้น |
-| ธีม | Minimal Luxury / Modern Mediterranean — Clean White / Warm Beige `#e8dfcf` / Sand `#f6f2ea` / Dark Charcoal `#26292e` (token ใน `app/globals.css` @theme) |
+| ธีม | Minimal Luxury / Editorial Luxury — Clean White / Warm Beige `#e8dfcf` / Sand `#f6f2ea` / Dark Charcoal `#26292e` (token ใน `app/globals.css` @theme) · ฟอนต์ display: **Playfair Display** (เฉพาะตัวเลขราคา/สถิติ/วลีอังกฤษ — ข้อความไทยใช้ Prompt ทั้งหมด) · การ์ดกรอบ hairline `border-beige` · scroll reveal (no-JS safe + reduced-motion) |
+| การจอง | Flow A ไม่มี backend — ฟอร์ม `BookingPlanner` (section 12 `#booking`) ให้ผู้ใช้เลือกวิลล่า/วันที่/จำนวนคน คำนวณราคาประมาณการ + มัดจำ จาก `lib/pricing.ts` แล้วคัดลอกข้อความ + เปิด LINE ต่อ (ไม่ส่งข้อมูลไปเซิร์ฟเวอร์) |
 
 ### ช่องทางติดต่อ (ใช้ในเว็บ)
 - Facebook: https://www.facebook.com/PUYA.Beach.Villa
@@ -80,13 +81,22 @@
 - ✅ Sticky mobile booking bar (LINE + โทร) · รูปใหม่ชุด img6xxx นำมาใช้ (ห้องนอนวิวสระ, ลาน BBQ, โต๊ะพูลวิวทะเล)
 
 ### Phase 4: Testing — ✅ เสร็จ
-- `npm run build` ผ่าน (static prerender, First Load JS ~108 kB)
-- Browser ทดสอบจริง + Lighthouse: **Accessibility 100 / Best Practices 100 / SEO 83→94 (dev-mode false alarm เมื่อ prod มี meta description จริง)**
+- `npm run build` ผ่าน (static prerender, First Load JS ~117 kB ≤ 120 เป้า)
+- Browser ทดสอบจริง + Lighthouse (prod, หลัง Premium Overhaul 2026-11-10): **Accessibility 100 / Best Practices 100 / SEO 100**
 - แก้ contrast ครบ: eyebrow สี stonewash-600, ปุ่ม LINE เขียวเข้ม #0A5C33
 - ⚠️ เกร็ด: ห้ามรัน `npm run build` ขณะ `npm run dev` เปิดอยู่ — cache .next พัง (ต้องลบ .next + restart)
 
 ### Phase 5: Deployment — ✅ เสร็จ
 - Live: https://puya-web-three.vercel.app (auto-deploy จาก main ทุกครั้งที่ push)
+
+### รอบ Premium Overhaul — ✅ เสร็จ (2026-11-10)
+- แผน: `docs/superpowers/plans/2026-11-10-puya-premium-overhaul.md` (design doc อนุมัติแล้วใน `docs/superpowers/specs/`)
+- og:image 1200×630 · `lib/pricing.ts` (คิดราคาทีละคืน ศ./ส. 7,990 · อา.-พฤ. 6,990 + มัดจำ 3,000/หลัง)
+- `BookingPlanner` (section 12) — ฟอร์มวางแผนเข้าพัก → คัดลอกข้อความ + เปิด LINE (flow A)
+- แกลลอรี่หมวด (pool/bedroom/interior/seaview) + collage รูปแรก 2×2 + lightbox preload
+- Restyle editorial luxury: Playfair Display + boutique pricing table (แชร์ขอบ ขาว/charcoal) + eyebrow เส้นคู่ — **hero เดิมไม่แตะ**
+- ScrollReveal (22 block, no-JS safe) · เมนู hamburger มือถือ (<lg) — ปิดครบทุกวิธี
+- QA สุดท้าย: Lighthouse 100/100/100 · static HTML checklist ครบ (H1/SEO/JSON-LD/ราคา/รูป 16)
 
 ### Phase 6: Maintenance — 🔵 ทำต่อเนื่อง
 - แผนเพิ่มอันดับต่อจากนี้: ลงทะเบียน Google Search Console + Bing, ติดตั้ง Analytics, เก็บข้อมูล check-in เงื่อนไขมัดจำ, รีวิวถ่ายขึ้น Maps เพิ่ม, custom domain + Share OG image ขนาด 1200×630
