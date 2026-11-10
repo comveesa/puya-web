@@ -13,6 +13,14 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (30) Premium Overhaul #6: scroll reveal (ไม่เพิ่ม dependency)
+- `components/ScrollReveal.tsx` ใหม่ (client): เพิ่ม `has-reveal` บน `<html>` ตอน hydrate → IntersectionObserver (threshold 0.15) ใส่ `is-visible` ทีละ block แล้ว unobserve · cleanup ครบ
+- `app/globals.css`: CSS reveal (fade-up 24px, 0.7s) — **opacity:0 ถูก scope ใต้ `.has-reveal` เท่านั้น** (server HTML ไม่มี class นี้ = ปิด JS เนื้อหาโชว์ปกติ) + `@media prefers-reduced-motion` ปิดทรานสิชัน
+- `app/page.tsx` + `SectionHeading` (prop `reveal`) + `BookingPlanner`: data-reveal ครบ 22 block ทุก section — **ไม่ใส่บน hero**
+- ตรวจ browser: hydrate แล้ว has-reveal + block ในจอโชว์ · scroll ถึง pricing → reveal ทันที opacity 1 · server HTML ไม่มี has-reveal (no-JS safe) · CSS reduced-motion ฝังจริง
+- ⚠️ บทเรียน: รัน `npm run build` ขณะ dev server เปิด → `.next` พัง (MODULE_NOT_FOUND ./770.js) ตามที่ agent.md เตือน — แก้โดยปิด dev + ลบ `.next` + เปิดใหม่ · ต่อไป: ปิด dev ทุกครั้งก่อน build
+- Build ผ่าน 114 kB · ขั้นถัดไป: Task 7 เมนูมือถือ hamburger
+
 ### [2026-11-10] (29) Premium Overhaul #5: restyle แบบ editorial luxury (mockup B)
 - `app/layout.tsx`: เพิ่ม Playfair Display (next/font, latin, 400/600, `--font-display`) — ข้อความไทยยัง Prompt ทั้งหมด
 - `app/globals.css`: เพิ่ม `.font-display` (fallback Prompt กันตัวอักษรไทย/฿ หล่น)

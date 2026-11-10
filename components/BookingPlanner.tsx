@@ -58,7 +58,7 @@ export function BookingPlanner() {
         เลือกวิลล่าและวันที่ — ระบบเรียบเรียงข้อความให้พร้อม คัดลอกแล้วส่งหาเจ้าของผ่าน LINE ได้ทันที
       </p>
 
-      <div className="mx-auto mt-10 grid overflow-hidden rounded-2xl border border-beige bg-white text-left md:grid-cols-[1.3fr_1fr]">
+      <div data-reveal className="mx-auto mt-10 grid overflow-hidden rounded-2xl border border-beige bg-white text-left md:grid-cols-[1.3fr_1fr]">
         {/* ฟอร์ม */}
         <div className="p-6 md:p-8">
           <h3 className="text-lg font-semibold text-ink">เลือกการเข้าพักของคุณ</h3>

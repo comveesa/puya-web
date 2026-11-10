@@ -7,6 +7,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { StickyBookBar } from "@/components/StickyBookBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { GalleryLightbox } from "@/components/GalleryLightbox";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const HOME_BADGES = [
   "จองตรงกับเจ้าของ",
@@ -179,6 +180,7 @@ export default function Home() {
           <div>
             <SectionHeading
               align="left"
+              reveal
               eyebrow="About PUYA"
               title="เกี่ยวกับ PUYA Beach Villa"
               desc={`พักผ่อนสุดชิลที่ Puya Beach Villa พูลวิลล่าสงขลาติดทะเล อำเภอเทพา บ้านพัก 2 หลังริมชายหาด บรรยากาศส่วนตัว สระว่ายน้ำพร้อมสไลเดอร์ ปิ้งย่างซีฟู้ด คาราโอเกะ และโต๊ะพูล จองบ้านพักติดทะเลสงขลากับเจ้าของโดยตรงได้แล้ววันนี้!`}
@@ -199,7 +201,7 @@ export default function Home() {
               ))}
             </dl>
           </div>
-          <figure className="overflow-hidden rounded-2xl border border-beige">
+          <figure data-reveal className="overflow-hidden rounded-2xl border border-beige">
             <div className="relative aspect-[4/5] md:aspect-[3/4]">
               <Image
                 src={BUSINESS.aboutImage.src}
@@ -217,11 +219,12 @@ export default function Home() {
       <section id="villas" className="bg-sand py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
+            reveal
             eyebrow="Villa 1 & Villa 2"
             title="พูลวิลล่าของเรา 2 หลัง ริมทะเล"
             desc="สองหลังขนาดและอุปกรณ์เหมือนกันหมด — เลือกจองหลังเดียว 12 ท่าน หรือจองทั้งสองหลังสำหรับ 24 ท่าน หน่วยงาน หรือครอบครัวใหญ่สนุกได้เต็มที่กับพูลวิลล่าติดทะเลเทพาแห่งนี้ได้"
           />
-          <div className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
+          <div data-reveal className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
             <VillaCard title="พูลวิลล่า 1" image={BUSINESS.villaImages[0]} />
             <VillaCard title="พูลวิลล่า 2" image={BUSINESS.villaImages[1]} />
           </div>
@@ -231,11 +234,12 @@ export default function Home() {
       {/* 4) BEDROOMS */}
       <section id="bedrooms" className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <SectionHeading
+          reveal
           eyebrow="Bedrooms"
           title="3 ห้องนอน · 3 ห้องน้ำ · รับ 12 คน"
           desc="ทุกห้องมีเตียง 5 ฟุต 2 เตียง ราวแขวนผ้า-ไดร์เป่าผมพร้อมใช้ และแอร์เย็นสบาย"
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div data-reveal className="mt-14 grid gap-6 md:grid-cols-3">
           {BUSINESS.rooms.map((room) => (
             <article
               key={room.id}
@@ -264,11 +268,12 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
             tone="dark"
+            reveal
             eyebrow="Private Pool & Water Slide"
             title="สระว่ายน้ำส่วนตัว + สไลเดอร์"
             desc={`สระส่วนตัวขนาด ${BUSINESS.poolSize} พร้อมสไลเดอร์และห่วงยางแฟนซี — เด็ก ๆ สนุกทั้งวัน ผู้ใหญ่ผ่อนคลายกับวิวทะเลด้านหน้า`}
           />
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div data-reveal className="mt-14 grid gap-6 md:grid-cols-2">
             {BUSINESS.poolImages.map((img) => (
               <figure key={img.src} className="overflow-hidden rounded-2xl">
                 <div className="relative aspect-[4/3]">
@@ -293,11 +298,12 @@ export default function Home() {
       <section id="facilities" className="bg-sand py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
+            reveal
             eyebrow="Facilities"
             title="ครบทุกอย่างสำหรับปาร์ตี้และความสบาย"
             desc="อยากร้องเพลง เล่นโต๊ะพูล ทำอาหาร หรือปิ้งย่าง BBQ ริมสระ — อยู่ที่เดียวจบทุกกิจกรรม"
           />
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div data-reveal className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {BUSINESS.facilities.map((f) => (
               <article
                 key={f.title}
@@ -313,7 +319,7 @@ export default function Home() {
           </div>
 
           {/* ของฟรีประจำการเข้าพัก */}
-          <div className="mt-8 rounded-2xl border border-beige bg-beige/60 p-6 md:p-8">
+          <div data-reveal className="mt-8 rounded-2xl border border-beige bg-beige/60 p-6 md:p-8">
             <h3 className="font-semibold text-ink">🎁 ฟรีทุกการเข้าพัก</h3>
             <ul className="mt-3 flex flex-wrap gap-2.5 text-sm text-stone-800">
               {BUSINESS.freebies.map((item) => (
@@ -329,11 +335,12 @@ export default function Home() {
       {/* 7) PRICING & BOOKING */}
       <section id="pricing" className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <SectionHeading
+          reveal
           eyebrow="Pricing"
           title="ราคาจองตรงกับเจ้าของ — ไม่มีค่าแอป"
           desc="ราคาต่อหลังต่อคืน รวมผู้เข้าพักถึง 12 คน และของฟรีในการเข้าพัก ตรวจสอบวันว่างผ่าน LINE หรือโทรศัพท์"
         />
-        <div className="mx-auto mt-14 grid max-w-3xl border border-beige bg-white sm:grid-cols-2">
+        <div data-reveal className="mx-auto mt-14 grid max-w-3xl border border-beige bg-white sm:grid-cols-2">
           {BUSINESS.pricing.map((p, i) => {
             const dark = p.id === "weekend";
             return (
@@ -388,22 +395,26 @@ export default function Home() {
       <section id="gallery" className="bg-sand py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
+            reveal
             eyebrow="Gallery"
             title="เก็บภาพความประทับใจจาก PUYA"
             desc="รวมภาพบรรยากาศจริงของบ้านพัก สระว่ายน้ำ และวิวทะเลเทพา"
           />
-          <GalleryLightbox images={BUSINESS.gallery} />
+          <div data-reveal>
+            <GalleryLightbox images={BUSINESS.gallery} />
+          </div>
         </div>
       </section>
 
       {/* 9) REVIEWS — ชี้ไปรีวิวจริงบน Google Maps / Facebook ไม่แต่งรีวิวเอง */}
       <section id="reviews" className="mx-auto max-w-6xl px-4 py-20 md:px-6 md:py-28">
         <SectionHeading
+          reveal
           eyebrow="Reviews"
           title="อ่านรีวิวจริงของผู้เข้าพัก"
           desc="เราไม่นำรีวิวมาเขียนใหม่บนเว็บไซต์ — อ่านรีวิวจริงทั้งหมดจากผู้เข้าพักได้ในช่องทางที่จริงเท่านั้น"
         />
-        <div className="mx-auto mt-10 flex max-w-xl flex-col gap-4 sm:flex-row sm:justify-center">
+        <div data-reveal className="mx-auto mt-10 flex max-w-xl flex-col gap-4 sm:flex-row sm:justify-center">
           <a
             href={BUSINESS.googleMapsUrl}
             target="_blank"
@@ -430,11 +441,12 @@ export default function Home() {
       <section id="location" className="bg-sand py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <SectionHeading
+            reveal
             eyebrow="Location"
             title="ที่ตั้ง & แผนที่นำทาง"
             desc={`${BUSINESS_ADDRESS_FULL} — กดแผนที่เพื่อเปิดนำทางด้วย Google Maps ได้ทันที`}
           />
-          <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1.5fr]">
+          <div data-reveal className="mt-14 grid gap-8 md:grid-cols-[1fr_1.5fr]">
             <article className="rounded-2xl border border-beige bg-white p-8">
               <h3 className="text-lg font-semibold text-ink">PUYA Beach Villa</h3>
               <p className="mt-2 leading-relaxed text-stone-700">{BUSINESS_ADDRESS_FULL}</p>
@@ -476,11 +488,12 @@ export default function Home() {
       {/* 11) FAQ */}
       <section id="faq" className="mx-auto max-w-3xl px-4 py-20 md:px-6 md:py-28">
         <SectionHeading
+          reveal
           eyebrow="FAQ"
           title="คำถามที่พบบ่อยก่อนจอง"
           desc="รวมคำตอบจากสิ่งที่ลูกค้าถามบ่อยที่สุด — ถ้ายังไม่ครบทุกข้อสงสัย ถามเจ้าของผ่าน LINE ได้เลย"
         />
-        <div className="mt-10 divide-y divide-beige">
+        <div data-reveal className="mt-10 divide-y divide-beige">
           {FAQ_ITEMS.map((item) => (
             <details key={item.q} className="group py-4">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-2 font-medium text-ink transition group-open:text-[#0A5C33]">
@@ -512,6 +525,7 @@ export default function Home() {
 
       <SiteFooter />
       <StickyBookBar />
+      <ScrollReveal />
 
       {/* Structured Data */}
       <script

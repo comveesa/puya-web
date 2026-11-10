@@ -5,16 +5,19 @@ export function SectionHeading({
   desc,
   align = "center",
   tone = "light",
+  reveal = false,
 }: {
   eyebrow: string;
   title: string;
   desc?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";
+  /** ใส่ data-reveal ให้ block นี้ fade-up ตอนเลื่อนเข้าจอ (เปิดเฉพาะที่ ScrollReveal ใช้งาน) */
+  reveal?: boolean;
 }) {
   const alignCls = align === "center" ? "text-center mx-auto max-w-2xl" : "max-w-2xl";
   return (
-    <div className={alignCls}>
+    <div className={alignCls} {...(reveal ? { "data-reveal": true } : {})}>
       <p
         className={`flex items-center gap-3.5 text-xs font-semibold uppercase tracking-[0.28em] ${
           align === "center" ? "justify-center" : ""
