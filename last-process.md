@@ -13,6 +13,12 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (28) Premium Overhaul #4: แกลลอรี่หมวด + collage + preload
+- `lib/business.ts`: เพิ่ม field `category` ครบ 16 ใบ (pool 3 · bedroom 5 · interior 5 · seaview 3) — src/alt เดิมไม่แตะ
+- `components/GalleryLightbox.tsx`: ปุ่มหมวด 5 pill (active พื้น charcoal ตาม mockup B) · grid collage (mobile 2 คอลัมน์ 120px / desktop 4 คอลัมน์ 150px) รูปแรกของชุด span 2×2 + caption gradient · lightbox เลื่อน/นับเฉพาะชุดที่กรอง · preload ภาพก่อน–หลัง (raw URL) — keyboard/swipe/ESC/scroll-lock/ARIA เดิมคงครบ
+- ตรวจ browser: filter ถูกชุดทุกหมวด (pool 1928/1897/1861 · bedroom 6811/6810/6832/0624/1948 · seaview 6757/6742/0617) · รูปแรก 2×2 ทุกชุด · นับ 1/5→2/5→วนครบชุด · ESC ปิด scroll คืน · preload เห็น request จริง · static HTML มีรูปครบ 16 ใบ
+- Build ผ่าน · First Load JS 113 kB · ขั้นถัดไป: Task 5 restyle แบบ B (Playfair Display + boutique pricing)
+
 ### [2026-11-10] (27) Premium Overhaul #3: ฟอร์มวางแผนการเข้าพัก (BookingPlanner)
 - `components/BookingPlanner.tsx` ใหม่ (client): เลือกวิลล่า 3 pill · date input 2 ช่อง · stepper ผู้เข้าพัก 1–24 · แผงสรุปพื้นมืด (คืน/ราคาประมาณการ/มัดจำ) · ปุ่มเขียว LINE คัดลอกข้อความ+เปิด LINE · ปุ่มโทรสำรอง · ปุ่มปิดเมื่อวันยังไม่ถูกต้อง
 - `app/page.tsx` section 12 (`#booking`): แทน CTA เดิมด้วย `<BookingPlanner />` — คงรูป bg + overlay charcoal + anchor เดิม, H2 เดิมย้ายเข้า component
