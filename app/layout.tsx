@@ -8,10 +8,13 @@ const prompt = Prompt({
   variable: "--font-prompt",
 });
 
-/** ฟอนต์ตัวเลข/ภาษาอังกฤษประดับ (ตาม mockup B) — ข้อความไทยยังใช้ Prompt ทั้งหมด */
+/** ฟอนต์ตัวเลข/ภาษาอังกฤษประดับ (ตาม mockup B) — ข้อความไทยยังใช้ Prompt ทั้งหมด
+ *  โหลดเฉพาะ 400 (จุดที่ใช้ bold ใช้ synthetic bold จาก 400 แทน) · preload: false
+ *  เพราะใช้เฉพาะใต้ fold (ราคา/สถิติ/footer) — ไม่ให้แย่ง bandwidth ของ Prompt (H1/hero) ตอนโหลด */
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400"],
+  preload: false,
   variable: "--font-display",
 });
 

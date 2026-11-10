@@ -86,15 +86,8 @@ export function GalleryLightbox({ images }: { images: readonly GalleryItem[] }) 
     };
   }, [isOpen, show]);
 
-  /* Preload ภาพก่อน–หลังในชุดที่กรองอยู่ (เลื่อนดูแล้วภาพพร้อม) */
-  useEffect(() => {
-    if (index === null || count === 0) return;
-    for (const d of [-1, 1] as const) {
-      const neighbour = filtered[(index + d + count) % count];
-      const pre = document.createElement("img");
-      pre.src = neighbour.src;
-    }
-  }, [index, filtered, count]);
+  /* Preload ภาพก่อน–หลังในชุดที่กรองอยู่ — เรนเดอร์เป็น <Image> ที่ซ่อนไว้ใน dialog
+     เพื่อให้ได้ URL เดียวกับภาพที่จะแสดงจริง (ผ่าน optimizer) ไม่ใช่โหลดไฟล์ดิบที่ไม่เคยใช้ */
 
   /* ภาพที่กำลังปิด (animation จบ → ค่อย unmount) */
   const handleAnimEnd = useCallback(() => {
@@ -246,6 +239,23 @@ export function GalleryLightbox({ images }: { images: readonly GalleryItem[] }) 
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>
+          </div>
+
+          {/* Preload ภาพก่อน–หลัง — sizes ตรงกับภาพใหญ่เพื่อให้ optimizer URL ตรงกัน (cache hit) */}
+          <div aria-hidden className="hidden">
+            {[-1, 1].map((d) => {
+              const neighbour = filtered[(index + d + count) % count];
+              return (
+                <Image
+                  key={neighbour.src}
+                  src={neighbour.src}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 86vw, (min-width: 640px) 74vw, 62vw"
+                  loading="eager"
+                />
+              );
+            })}
           </div>
 
           {/* Caption + นับลำดับ (นับจากชุดที่กรองอยู่) */}

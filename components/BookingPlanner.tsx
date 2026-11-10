@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BUSINESS } from "@/lib/business";
 import {
   calcEstimate,
@@ -23,12 +23,21 @@ export function BookingPlanner() {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(8);
-  const [copied, setCopied] = useState(false);
+  const [copyState, setCopyState] = useState<"idle" | "ok" | "fail">("idle");
+  const [lastMessage, setLastMessage] = useState("");
+  const copiedTimer = useRef<number | null>(null);
 
   const estimate = useMemo(
     () => calcEstimate(checkIn, checkOut, choice),
     [checkIn, checkOut, choice],
   );
+
+  /* เคลียร์ timer รีเซ็ตสถานะ "คัดลอกแล้ว" ตอน unmount */
+  useEffect(() => {
+    return () => {
+      if (copiedTimer.current !== null) window.clearTimeout(copiedTimer.current);
+    };
+  }, []);
 
   const handleSend = async () => {
     if (!estimate) return;
@@ -41,10 +50,13 @@ export function BookingPlanner() {
     });
     try {
       await navigator.clipboard.writeText(message);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 3000);
+      setCopyState("ok");
+      if (copiedTimer.current !== null) window.clearTimeout(copiedTimer.current);
+      copiedTimer.current = window.setTimeout(() => setCopyState("idle"), 3000);
     } catch {
-      // clipboard ใช้ไม่ได้ (เช่น http) — เปิด LINE ให้ต่อได้เลย
+      // clipboard ใช้ไม่ได้ (เช่น in-app webview กันสิทธิ์) — บอกผู้ใช้ชัด ๆ แล้วให้คัดลอกเองจากกล่องข้อความ
+      setCopyState("fail");
+      setLastMessage(message);
     }
     window.open(BUSINESS.lineUrl, "_blank", "noopener,noreferrer");
   };
@@ -110,6 +122,7 @@ export function BookingPlanner() {
                 <input
                   type="date"
                   value={checkOut}
+                  min={checkIn || undefined}
                   onChange={(e) => setCheckOut(e.target.value)}
                   className="mt-0.5 w-full bg-transparent outline-none"
                   aria-label="วันเช็คเอาท์"
@@ -181,10 +194,22 @@ export function BookingPlanner() {
             คัดลอกข้อความ &amp; เปิด LINE
           </button>
           <p className="mt-2.5 text-center text-xs leading-relaxed text-sand/65">
-            {copied
+            {copyState === "ok"
               ? "✔ คัดลอกแล้ว — กดวางในแชท LINE เพื่อส่งหาเจ้าของ"
-              : "ราคาเป็นประมาณการ — เงื่อนไขจริงยืนยันกับเจ้าของในแชท"}
+              : copyState === "fail"
+                ? "คัดลอกอัตโนมัติไม่สำเร็จ — กดค้างที่กล่องข้อความด้านล่างเพื่อคัดลอก แล้ววางในแชท LINE"
+                : "ราคาเป็นประมาณการ — เงื่อนไขจริงยืนยันกับเจ้าของในแชท"}
           </p>
+          {copyState === "fail" && (
+            <textarea
+              readOnly
+              value={lastMessage}
+              rows={7}
+              onClick={(e) => e.currentTarget.select()}
+              aria-label="ข้อความจองสำหรับคัดลอกด้วยตนเอง"
+              className="mt-2 w-full rounded-xl border border-sand/40 bg-white/10 p-3 text-left text-xs leading-relaxed text-sand"
+            />
+          )}
 
           <a
             href={`tel:${BUSINESS.phoneIntl}`}

@@ -13,6 +13,15 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (33) Premium Overhaul #9: รีวิวทั้ง branch + แก้ตามผลรีวิว + วัด Performance
+- **รีวิวโดย subagent (84d1b5a..1d05625):** With fixes — ข้อจำกัดถากผ่านครบ (H1/meta/JSON-LD/ราคา/hero ไม่แตะ/ไม่เพิ่ม dependency) · ไม่มี Critical
+- แก้ Important 3 ข้อ:
+  1. **preload แกลลอรี่** — เดิม `createElement('img')` โหลดไฟล์ดิบที่ไม่เคยแสดง (ทุกรูป render ผ่าน `/_next/image`) → เปลี่ยนเป็น `<Image>` ซ่อน (`hidden` + `loading="eager"`, sizes ตรงกับภาพใหญ่) ใน dialog — ตรวจ network: preload ตี `/_next/image?...w=640` ตรงกับที่แสดง, raw 0 request
+  2. **clipboard ล้มเหลวเงียบ** — `handleSend` catch แล้วเดิมไม่บอกผู้ใช้ → เพิ่ม `copyState` (ok/fail) ถ้า fail: hint "กดค้างเพื่อคัดลอก" + กล่อง textarea ข้อความเต็มให้คัดลอกเอง + LINE ยังเปิด (ทดสอบจำลอง writeText throw แล้วครบ) · พ่วง: timer รีเซ็ต cleared ตอน unmount + `min` ช่องเช็คเอาท์ = วันเช็คอิน
+  3. **Performance ยังไม่วัด** — วัดจริงด้วย lighthouse CLI (headless Edge): baseline เก่า live (Vercel) 96 · เทียบแฟร์บน localhost: โค้ดเก่า 92/95 vs โค้ดใหม่ 88 → ตัด Playfair เหลือ weight 400 + `preload:false` (ใช้เฉพาะใต้ fold) → **90–91** (LCP +0.4–0.6s จากฟอนต์ display ตามดีไซน์, FCP/SI/TBT/CLS ที่พาริตี้) — ยอมรับ delta นี้พร้อมเอกสาร (ทุกคะแนนยังเขียว)
+- Lighthouse ในแอป รอบสุดท้าย (build สุดท้าย): **A11y 100 · BP 100 · SEO 100** · Playfair ยัง render ทุกจุด (การ์ดราคา bold 700 จาก synthetic) · ปุ่มเขียว 6 · reveal 22 block · First Load JS 117 kB
+- push รอบแรก `84d1b5a..1d05625` (GCM ต้องยืนยันตัวตนบนหน้าจอผู้ใช้ — จดเกร็ด) แล้ว push รอบแก้รีวิวตาม → Vercel deploy → ตรวจ live
+
 ### [2026-11-10] (32) Premium Overhaul #8: QA รวบยอด + push (จบแผน)
 - QA บน prod build (`npm run build` 117 kB → `npm start`): **Lighthouse Accessibility 100 · Best Practices 100 · SEO 100** (เครื่องมือในแอปไม่วัด Performance) · static HTML ครบ: H1 ×1, title/desc เดิม, JSON-LD LodgingBusiness+FAQPage, โทร 092-861-3745, LINE ~puyabeach, ราคา 6,990/7,990, รูปแกลลอรี่ครบ 16 ใบ · ปุ่ม LINE เขียว #0A5C33 ครบ 6 จุด · ฟอร์มจองตรวจครบทุก case (Task 3)
 - เอกสาร: `.gitignore` เพิ่ม `.superpowers/` · `agent.md` หัวข้อ 1 (ธีม editorial luxury + Playfair + flow A BookingPlanner) และหัวข้อ 3 (Phase 4 คะแนนใหม่ + สรุปรอบ Premium Overhaul)
