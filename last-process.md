@@ -13,6 +13,12 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (27) Premium Overhaul #3: ฟอร์มวางแผนการเข้าพัก (BookingPlanner)
+- `components/BookingPlanner.tsx` ใหม่ (client): เลือกวิลล่า 3 pill · date input 2 ช่อง · stepper ผู้เข้าพัก 1–24 · แผงสรุปพื้นมืด (คืน/ราคาประมาณการ/มัดจำ) · ปุ่มเขียว LINE คัดลอกข้อความ+เปิด LINE · ปุ่มโทรสำรอง · ปุ่มปิดเมื่อวันยังไม่ถูกต้อง
+- `app/page.tsx` section 12 (`#booking`): แทน CTA เดิมด้วย `<BookingPlanner />` — คงรูป bg + overlay charcoal + anchor เดิม, H2 เดิมย้ายเข้า component
+- ตรวจบน dev (browser จริง) วันอ้างอิง พ.ย. 2026: ศ.13→อา.15 วิลล่าเดียว = **2 คืน ฿15,980 มัดจำ ฿3,000** ✅ · ศ.13→จ.16 = **3 คืน ฿22,970** (คิดทีละคืน 7,990+7,990+6,990) ✅ · สองหลัง 2 คืน = **฿31,960 มัดจำ ฿6,000** ✅ · clipboard ข้อความครบ (วิลล่า/วันที่ 13/11–16/11/2569/คืน/คน/ราคา/มัดจำ) ✅ · ปุ่มเปิด `line.me/R/ti/p/~puyabeach` ✅
+- Build ผ่าน · First Load JS 113 kB (≤ 120) · ขั้นถัดไป: Task 4 แกลลอรี่ (หมวด + collage + preload)
+
 ### [2026-11-10] (26) Premium Overhaul #2: logic คิดราคาจอง (`lib/pricing.ts`)
 - เพิ่ม `BUSINESS.depositPerVilla = 3000` (ยืนยันเจ้าของ: มัดจำต่อหลัง สองหลัง = 6,000)
 - `lib/pricing.ts`: `VillaChoice` (villa1/villa2/both) · `calcEstimate` นับราคาทีละคืน (ศ.-ส. 7,990 / อื่น ๆ 6,990 × จำนวนหลัง, อ่านจาก BUSINESS.pricing) คืน null ถ้าวันไม่ถูก · `composeLineMessage` เรียบเรียงข้อความไทยสำหรับวางใน LINE (สำนวนกลาง ไม่มีคำลงท้ายเพศ)

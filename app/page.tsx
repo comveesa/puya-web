@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BUSINESS, BUSINESS_ADDRESS_FULL, FAQ_ITEMS } from "@/lib/business";
+import { BookingPlanner } from "@/components/BookingPlanner";
 import { BookingCta, BookLineButton } from "@/components/BookingCta";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -477,19 +478,8 @@ export default function Home() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-charcoal/60" />
-        <div className="relative mx-auto max-w-3xl px-4 py-24 text-center md:px-6 md:py-32">
-          <h2 className="text-3xl font-semibold leading-snug text-white md:text-5xl">
-            พร้อมจองพูลวิลล่าเทพา ติดทะเลสงขลา
-          </h2>
-          <p className="mt-4 text-sand/85 md:text-lg">
-            เช็ควันว่างและปักหมุดวันที่คุณอยากพัก — คุยกับเจ้าของโดยตรงผ่าน LINE หรือโทรศัพท์
-          </p>
-          <div className="mt-8">
-            <BookingCta tone="dark" />
-          </div>
-          <p className="mt-6 text-sm text-sand/70">
-            LINE ID {BUSINESS.lineId} · โทร {BUSINESS.phone}
-          </p>
+        <div className="relative mx-auto max-w-4xl px-4 py-24 md:px-6 md:py-32">
+          <BookingPlanner />
         </div>
       </section>
 
