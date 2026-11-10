@@ -13,6 +13,14 @@
 
 ## บันทึกการทำงาน
 
+### [2026-11-10] (29) Premium Overhaul #5: restyle แบบ editorial luxury (mockup B)
+- `app/layout.tsx`: เพิ่ม Playfair Display (next/font, latin, 400/600, `--font-display`) — ข้อความไทยยัง Prompt ทั้งหมด
+- `app/globals.css`: เพิ่ม `.font-display` (fallback Prompt กันตัวอักษรไทย/฿ หล่น)
+- `components/SectionHeading.tsx`: eyebrow เส้นบาง 44px สองข้าง (center) / ข้างเดียว (left) · หัว section text-4xl→md:text-5xl
+- `app/page.tsx`: การ์ดทุก section เปลี่ยน ring เงา → กรอบ hairline border-beige + rounded-2xl · ตัวเลขสถิติ/ราคาใช้ font-display · **ตารางราคา boutique** ชนกันแชร์ขอบ (อา.-พฤ. พื้นขาว / ศ.-ส. พื้น charcoal ตัว sand) ราคา 52px + รายการ "รวมในราคา" คั่นเส้นบาง (จาก capacity + freebies เดิม) — จังหวะสี section เดิมทุกจุด, **hero ไม่แตะแม้บรรทัดเดียว**
+- `components/SiteFooter.tsx`: wordmark ใช้ font-display
+- ตรวจ: build ผ่าน 113 kB · static HTML ครบ (H1 ×1, 6,990/7,990, เบอร์, ~puyabeach, JSON-LD 2 ชุด, --font-display ใน CSS) · browser: tier ศ.-ส. bg charcoal, ราคา Playfair จริง, ปุ่มเขียว #0A5C33 ครบ 6 จุด, contrast sand/charcoal + stone-600/ขาว ผ่าน AA · ขั้นถัดไป: Task 6 scroll reveal
+
 ### [2026-11-10] (28) Premium Overhaul #4: แกลลอรี่หมวด + collage + preload
 - `lib/business.ts`: เพิ่ม field `category` ครบ 16 ใบ (pool 3 · bedroom 5 · interior 5 · seaview 3) — src/alt เดิมไม่แตะ
 - `components/GalleryLightbox.tsx`: ปุ่มหมวด 5 pill (active พื้น charcoal ตาม mockup B) · grid collage (mobile 2 คอลัมน์ 120px / desktop 4 คอลัมน์ 150px) รูปแรกของชุด span 2×2 + caption gradient · lightbox เลื่อน/นับเฉพาะชุดที่กรอง · preload ภาพก่อน–หลัง (raw URL) — keyboard/swipe/ESC/scroll-lock/ARIA เดิมคงครบ

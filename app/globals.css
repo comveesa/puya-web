@@ -24,6 +24,11 @@ body {
   color: var(--color-ink);
 }
 
+/* ฟอนต์ display (Playfair) สำหรับตัวเลขราคา/สถิติ/วลีอังกฤษประดับ — ตัวอักษรไทย/สัญลักษณ์฿ ตกไปใช้ Prompt */
+.font-display {
+  font-family: var(--font-display), var(--font-prompt), serif;
+}
+
 /* Lightbox animation — เปิด/ปิดนุ่มนวล */
 @keyframes lb-fade {
   from { opacity: 0; }

@@ -21,7 +21,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-14 md:px-6">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <p className="text-xl font-bold text-white">
+            <p className="font-display text-2xl text-white">
               PUYA <span className="font-medium text-sand">Beach Villa</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-sand/75">

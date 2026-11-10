@@ -87,7 +87,7 @@ function VillaCard({
   image: { src: string; alt: string };
 }) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-black/5">
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-beige bg-white">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={image.src}
@@ -114,7 +114,7 @@ function VillaCard({
         </ul>
         <p className="mt-6 text-sm text-stone-600">
           เริ่มต้น{" "}
-          <b className="text-lg text-ink">
+          <b className="font-display text-xl text-ink">
             ฿{BUSINESS.pricing[0].price.toLocaleString("th-TH")}
           </b>{" "}
           /คืน (อาทิตย์-พฤหัสบดี)
@@ -193,13 +193,13 @@ export default function Home() {
               {VILLA_STATS.map((s) => (
                 <div key={s.label} className="rounded-2xl bg-sand px-4 py-5 text-center">
                   <dt className="sr-only">{s.label}</dt>
-                  <dd className="text-2xl font-semibold text-ink">{s.n}</dd>
-                  <dd className="mt-1 text-xs leading-snug text-stone-600">{s.label}</dd>
+                  <dd className="font-display text-[1.7rem] leading-none text-ink">{s.n}</dd>
+                  <dd className="mt-2 text-xs leading-snug text-stone-600">{s.label}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <figure className="overflow-hidden rounded-3xl ring-1 ring-black/5">
+          <figure className="overflow-hidden rounded-2xl border border-beige">
             <div className="relative aspect-[4/5] md:aspect-[3/4]">
               <Image
                 src={BUSINESS.aboutImage.src}
@@ -221,7 +221,7 @@ export default function Home() {
             title="พูลวิลล่าของเรา 2 หลัง ริมทะเล"
             desc="สองหลังขนาดและอุปกรณ์เหมือนกันหมด — เลือกจองหลังเดียว 12 ท่าน หรือจองทั้งสองหลังสำหรับ 24 ท่าน หน่วยงาน หรือครอบครัวใหญ่สนุกได้เต็มที่กับพูลวิลล่าติดทะเลเทพาแห่งนี้ได้"
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
             <VillaCard title="พูลวิลล่า 1" image={BUSINESS.villaImages[0]} />
             <VillaCard title="พูลวิลล่า 2" image={BUSINESS.villaImages[1]} />
           </div>
@@ -235,11 +235,11 @@ export default function Home() {
           title="3 ห้องนอน · 3 ห้องน้ำ · รับ 12 คน"
           desc="ทุกห้องมีเตียง 5 ฟุต 2 เตียง ราวแขวนผ้า-ไดร์เป่าผมพร้อมใช้ และแอร์เย็นสบาย"
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {BUSINESS.rooms.map((room) => (
             <article
               key={room.id}
-              className="group overflow-hidden rounded-3xl bg-white ring-1 ring-black/5"
+              className="group overflow-hidden rounded-2xl border border-beige bg-white"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -268,9 +268,9 @@ export default function Home() {
             title="สระว่ายน้ำส่วนตัว + สไลเดอร์"
             desc={`สระส่วนตัวขนาด ${BUSINESS.poolSize} พร้อมสไลเดอร์และห่วงยางแฟนซี — เด็ก ๆ สนุกทั้งวัน ผู้ใหญ่ผ่อนคลายกับวิวทะเลด้านหน้า`}
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
             {BUSINESS.poolImages.map((img) => (
-              <figure key={img.src} className="overflow-hidden rounded-3xl">
+              <figure key={img.src} className="overflow-hidden rounded-2xl">
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={img.src}
@@ -297,11 +297,11 @@ export default function Home() {
             title="ครบทุกอย่างสำหรับปาร์ตี้และความสบาย"
             desc="อยากร้องเพลง เล่นโต๊ะพูล ทำอาหาร หรือปิ้งย่าง BBQ ริมสระ — อยู่ที่เดียวจบทุกกิจกรรม"
           />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {BUSINESS.facilities.map((f) => (
               <article
                 key={f.title}
-                className="rounded-3xl bg-white p-6 ring-1 ring-black/5"
+                className="rounded-2xl border border-beige bg-white p-6"
               >
                 <p className="text-3xl" aria-hidden>
                   {f.icon}
@@ -313,7 +313,7 @@ export default function Home() {
           </div>
 
           {/* ของฟรีประจำการเข้าพัก */}
-          <div className="mt-8 rounded-3xl bg-beige/60 p-6 ring-1 ring-beige md:p-8">
+          <div className="mt-8 rounded-2xl border border-beige bg-beige/60 p-6 md:p-8">
             <h3 className="font-semibold text-ink">🎁 ฟรีทุกการเข้าพัก</h3>
             <ul className="mt-3 flex flex-wrap gap-2.5 text-sm text-stone-800">
               {BUSINESS.freebies.map((item) => (
@@ -333,21 +333,48 @@ export default function Home() {
           title="ราคาจองตรงกับเจ้าของ — ไม่มีค่าแอป"
           desc="ราคาต่อหลังต่อคืน รวมผู้เข้าพักถึง 12 คน และของฟรีในการเข้าพัก ตรวจสอบวันว่างผ่าน LINE หรือโทรศัพท์"
         />
-        <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
-          {BUSINESS.pricing.map((p) => (
-            <article
-              key={p.id}
-              className="flex flex-col items-center rounded-3xl bg-white p-8 text-center ring-1 ring-black/5"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-600">
-                {p.day}
-              </p>
-              <p className="mt-3 text-4xl font-semibold text-ink">
-                ฿{p.price.toLocaleString("th-TH")}
-              </p>
-              <p className="mt-2 text-sm text-stone-600">ต่อหลัง / ต่อคืน</p>
-            </article>
-          ))}
+        <div className="mx-auto mt-14 grid max-w-3xl border border-beige bg-white sm:grid-cols-2">
+          {BUSINESS.pricing.map((p, i) => {
+            const dark = p.id === "weekend";
+            return (
+              <article
+                key={p.id}
+                className={`flex flex-col p-8 md:p-10 ${
+                  dark ? "border-t border-sand/25 bg-charcoal text-sand sm:border-t-0 sm:border-l" : "text-ink"
+                }`}
+              >
+                <p
+                  className={`text-[11.5px] font-semibold uppercase tracking-[0.28em] ${
+                    dark ? "text-sand/60" : "text-stone-500"
+                  }`}
+                >
+                  {p.day}
+                </p>
+                <p className="mt-3.5 font-display text-5xl leading-none md:text-[52px]">
+                  ฿{p.price.toLocaleString("th-TH")}
+                </p>
+                <p className={`mt-2.5 text-[12.5px] ${dark ? "text-sand/65" : "text-stone-500"}`}>
+                  ต่อหลัง / ต่อคืน
+                </p>
+                <ul
+                  className={`mt-6 grid gap-2 border-t pt-4 text-[12.5px] ${
+                    dark ? "border-sand/25 text-sand/80" : "border-beige text-stone-600"
+                  }`}
+                >
+                  {["รวมผู้เข้าพัก " + BUSINESS.capacity + " คน", ...BUSINESS.freebies].map(
+                    (item) => (
+                      <li key={item} className="flex gap-2">
+                        <span aria-hidden className={dark ? "text-[#8fd6ab]" : "text-[#0A5C33]"}>
+                          ✓
+                        </span>
+                        {item}
+                      </li>
+                    ),
+                  )}
+                </ul>
+              </article>
+            );
+          })}
         </div>
         <p className="mt-6 text-center text-sm text-stone-600">
           *การจองมีค่ามัดจำ 3,000 บาท — รายละเอียดเช็คอิน/ช่องทางการจอง สอบถามกับเจ้าของโดยตรงผ่าน LINE หรือโทรศัพท์
@@ -408,7 +435,7 @@ export default function Home() {
             desc={`${BUSINESS_ADDRESS_FULL} — กดแผนที่เพื่อเปิดนำทางด้วย Google Maps ได้ทันที`}
           />
           <div className="mt-12 grid gap-8 md:grid-cols-[1fr_1.5fr]">
-            <article className="rounded-3xl bg-white p-8 ring-1 ring-black/5">
+            <article className="rounded-2xl border border-beige bg-white p-8">
               <h3 className="text-lg font-semibold text-ink">PUYA Beach Villa</h3>
               <p className="mt-2 leading-relaxed text-stone-700">{BUSINESS_ADDRESS_FULL}</p>
               <p className="mt-3 text-sm text-stone-600">
@@ -431,7 +458,7 @@ export default function Home() {
                 </a>
               </div>
             </article>
-            <figure className="overflow-hidden rounded-3xl ring-1 ring-black/5">
+            <figure className="overflow-hidden rounded-2xl border border-beige">
               <div className="aspect-[16/10] md:aspect-auto md:h-full md:min-h-[420px]">
                 <iframe
                   title="แผนที่ Google Maps ของ PUYA Beach Villa ตำบลเทพา จังหวัดสงขลา"

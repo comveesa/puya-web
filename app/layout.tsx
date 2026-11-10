@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Prompt } from "next/font/google";
+import { Prompt, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const prompt = Prompt({
   subsets: ["thai", "latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-prompt",
+});
+
+/** ฟอนต์ตัวเลข/ภาษาอังกฤษประดับ (ตาม mockup B) — ข้อความไทยยังใช้ Prompt ทั้งหมด */
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-display",
 });
 
 /**
@@ -84,7 +91,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body className={`${prompt.variable} ${prompt.className} antialiased`}>
+      <body className={`${prompt.variable} ${playfair.variable} ${prompt.className} antialiased`}>
         {children}
       </body>
     </html>
